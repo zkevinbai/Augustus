@@ -44,12 +44,10 @@ class User < ApplicationRecord
         self.session_token
     end
 
-    def self.find_by_credentials(email=nil, username=nil, password)
-        if email && !username
-            @user = User.find_by(email: email)
-        elsif username && !email
-            @user = User.find_by(username: username)
-        end
+    def self.find_by_credentials(credential, password)
+        @user = User.where(email: credential).or(
+                User.where(username: credential)
+                ).first
 
         if @user && @user.is_password?(password)
             return @user
