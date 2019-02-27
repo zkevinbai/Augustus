@@ -20,7 +20,7 @@ body{
     background-repeat:no-repeat;
 }
 
-h1, h2, h3, p {
+h1, h2, h3, p, form {
     background: rgba(255, 255, 255, 0.5)
 }
 
