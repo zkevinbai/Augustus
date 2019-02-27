@@ -24,8 +24,9 @@ body{
     background-repeat:no-repeat;
     font-family: 'Righteous', cursive;
 }
+
 h1, h2, h3 {
-    font-family: 'Abril Fatface', cursive;
+    font-family: 'Libre Baskerville', serif;
 }
 
 h1, h2, h3, p, form, a {
@@ -36,7 +37,7 @@ a, button{
     color: rgb(98, 12, 232);
     text-decoration: none;
     font-size: 20px;
-    font-family: 'Righteous', cursive;
+    font-family: 'Comfortaa', cursive;
 }
 
 /* -------------------------- GREETING STYLING ------------------------------ */
@@ -90,5 +91,3 @@ a, button{
 .sessionErrors{
     color: rgb(232, 44, 12);
 };
-g
-
