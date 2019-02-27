@@ -32,13 +32,14 @@ class SessionForm extends React.Component {
 
                     <p>or</p> */}
 
+                    {this.props.errors.map (error => <p>{error}</p>)}
+
                     <input 
                         type="text"
                         placeholder="username or email"
                         value={ this.state.credential }
                         onChange={ this.handleChange("credential") }
                     />
-                    <br/>
 
                     <input 
                         type="password"
