@@ -10,17 +10,22 @@ const Greeting = (props) => {
             <button 
                 onClick={ () => props.logout() }
             >Sign Out</button>
+
+            <button
+                onClick={() => props.deleteAccount(props.user)}
+            >Delete Account</button>
         </div>
         )
     } else {
         return (
             <div className="Greeting" >
                 <h2>{ `no present user` }</h2>
-                <Link to="/signup" >Signup</Link>
-                <br/>
-                <Link to="/login">Login</Link>
-                <br/>
+                
                 <Link to="/">Root</Link>
+                
+                <Link to="/signup" >Signup</Link>
+                
+                <Link to="/login">Login</Link>
             </div>
         )
     }

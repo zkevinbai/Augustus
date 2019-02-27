@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {
-    logout
+    logout,
+    deleteAccount
 } from '../actions/session_actions';
 import Greeting from './greeting';
 
@@ -14,7 +15,8 @@ const mapStateToProps = (storeState, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    deleteAccount: (user) => dispatch(deleteAccount(user))
 });
 
 export default connect( mapStateToProps, mapDispatchToProps )( Greeting );
