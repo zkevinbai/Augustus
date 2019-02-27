@@ -7,7 +7,23 @@ import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
     const rootEl = document.getElementById('root');
-    const store = configureStore();
+    let preLoadedState;
+    if (window.currentUser) {
+        preLoadedState = {
+            entities: {
+                users: {
+                    [window.currentUser.id]: window.currentUser
+                }
+            },
+            session: {
+                id: window.currentUser.id
+            }
+        };
+    } else {
+        preLoadedState = {};
+    }
+    const store = configureStore(preLoadedState);
+
 
     // #########################################################################
         // ---------------------------TESTING START-----------------------------
