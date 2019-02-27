@@ -12,6 +12,10 @@ class UserForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentWillUnmount() {
+        this.props.clearErrors();
+    }
+
     handleChange(field) {
         return (event) => (
             this.setState({
@@ -27,23 +31,20 @@ class UserForm extends React.Component {
 
     render() {
         // console.log(this.props);
-        console.log(this.props.errors);
+        // console.log(this.props.errors);
         return (
             <div>
                 <Link to="/">Root</Link>
 
                 <form onSubmit={this.handleSubmit} >
-                    <h1>New User</h1>
+                    <h1>Signup Form</h1>
 
                     {/* <h3>placeholder for OAuth</h3>
                     <p>or</p> */}
 
                     <div>
                         {this.props.errors.map(error =>
-                            <div>
-                                <p key={error.length} >{error }</p>
-                                <br />
-                            </div>
+                            <p key={error.length} >{error }</p>
                         )}
                     </div>
 

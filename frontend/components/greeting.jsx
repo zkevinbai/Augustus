@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 
 const Greeting = (props) => {
 
-
-
     if (props.user){
         return (
         <div>
@@ -18,7 +16,7 @@ const Greeting = (props) => {
         return (
             <div>
                 <h2>{ `no present user` }</h2>
-                <Link to="/signup" >Sign Up</Link>
+                <Link to="/signup" >Signup</Link>
                 <br/>
                 <Link to="/login">Login</Link>
             </div>
