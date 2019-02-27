@@ -17,6 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             session: {
                 id: window.currentUser.id
+            },
+            errors: {
+                session: {
+                    
+                }
             }
         };
     } else {

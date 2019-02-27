@@ -26,17 +26,18 @@ class LoginForm extends React.Component {
 
     render(){
         // console.log(this.state);
-        console.log(this.props);
+        console.log(this.props.errors);
         return(
             <div>
                 <Link to="/">Root</Link>
+
                 <form onSubmit={ this.handleSubmit } >
                     <h1>New Session</h1>
                     {/* <h3>placeholder for OAuth</h3>
 
                     <p>or</p> */}
-
-                    {this.props.errors.map (error => <p>{error}</p>)}
+                    
+                    {this.props.errors.map(error => <p key={error.length} >{error}</p>)}
 
                     <input 
                         type="text"

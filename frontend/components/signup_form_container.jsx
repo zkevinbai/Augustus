@@ -7,7 +7,7 @@ import SignupForm from './signup_form';
 
 // my preferred pattern is to include ownProps and use explicit return
 const mapStateToProps = (storeState, ownProps) => {
-    const errors = Object.values(storeState.errors.session);
+    let errors = Object.values(storeState.errors.session);
     return ({
         errors
     });

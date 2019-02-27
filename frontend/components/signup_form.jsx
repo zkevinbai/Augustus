@@ -26,7 +26,8 @@ class UserForm extends React.Component {
     }
 
     render() {
-        console.log(this.props);
+        // console.log(this.props);
+        console.log(this.props.errors);
         return (
             <div>
                 <Link to="/">Root</Link>
@@ -35,10 +36,16 @@ class UserForm extends React.Component {
                     <h1>New User</h1>
 
                     {/* <h3>placeholder for OAuth</h3>
-
                     <p>or</p> */}
 
-                    {this.props.errors.map(error => <p>{error}</p>)}
+                    <div>
+                        {this.props.errors.map(error =>
+                            <div>
+                                <p key={error.length} >{error }</p>
+                                <br />
+                            </div>
+                        )}
+                    </div>
 
                     <input
                         type="text"
