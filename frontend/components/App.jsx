@@ -10,8 +10,10 @@ const App = () => (
     <div>
         <h1>Salve Mundi</h1>
         < GreetingContainer />
-        <AuthRoute path="/login" component={ LoginFormContainer } />
-        <AuthRoute path="/signup" component={ SignupFormContainer } />
+        <div className="SessionForms">
+            <AuthRoute path="/login" component={ LoginFormContainer } />
+            <AuthRoute path="/signup" component={ SignupFormContainer } />
+        </div>
     </div>
 );
 

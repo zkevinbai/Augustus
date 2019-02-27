@@ -32,7 +32,7 @@ class LoginForm extends React.Component {
         // console.log(this.state);
         // console.log(this.props.errors);
         return(
-            <div>
+            <div className="sessionForm">
                 <Link to="/">Root</Link>
 
                 <form onSubmit={ this.handleSubmit } >
