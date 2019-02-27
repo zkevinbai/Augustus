@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require rails-ujs
 //= require activestorage
 //= require_tree .
+
+// got an error that told me to remove this require rails-ujs
