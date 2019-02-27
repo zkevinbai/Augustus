@@ -1,5 +1,9 @@
 import { logout } from "../frontend/util/session_api_util";
 
+// #########################################################################
+    // ---------------------------TESTING START-----------------------------
+
+// Window AJAX -------------------------------------------------------------
 // Sign Up
 $.ajax({
     type: "POST",
@@ -57,7 +61,16 @@ let k2login = {
 login(k2login).then((res) => console.log(res));sl
 
 let k2delete = {
-    id: 2
+    id: 5
 };
 
 deleteAccount(k2delete).then((res) => console.log(res)); sl
+// Window Actions ----------------------------------------------------------
+
+signup(k2)(dispatch);
+
+login(k2login)(dispatch);
+
+logout()(dispatch);
+
+deleteAccount(k2delete)(dispatch);

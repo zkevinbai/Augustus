@@ -9,22 +9,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const rootEl = document.getElementById('root');
     const store = configureStore();
 
-    // Window AJAX -------------------------------------------------------------
-    // window.signup = SessionApiUtil.signup;
-    // window.deleteAccount = SessionApiUtil.deleteAccount;
-    // window.login = SessionApiUtil.login;
-    // window.logout = SessionApiUtil.logout;
+    // #########################################################################
+        // ---------------------------TESTING START-----------------------------
 
-    // Window Actions -------------------------------------------------------------
-    window.signup = SessionActions.signup;
-    window.login = SessionActions.login;
-    window.logout = SessionActions.logout;
-    window.deleteAccount = SessionActions.deleteAccount;
+    // Window AJAX -------------------------------------------------------------
+        // window.signup = SessionApiUtil.signup;
+        // window.deleteAccount = SessionApiUtil.deleteAccount;
+        // window.login = SessionApiUtil.login;
+        // window.logout = SessionApiUtil.logout;
+
+    // Window Actions ----------------------------------------------------------
+        window.signup = SessionActions.signup;
+        window.login = SessionActions.login;
+        window.logout = SessionActions.logout;
+        window.deleteAccount = SessionActions.deleteAccount;
     
     // Window Store ------------------------------------------------------------
-    window.store = store;
-    window.getState = store.getState;
-    window.dispatch = store.dispatch;
+        window.getState = store.getState;
+        window.dispatch = store.dispatch;
+
+        // --------------------------TESTING END--------------------------------
+    // #########################################################################
 
     ReactDOM.render(< Root store={store} />, rootEl);
 });
