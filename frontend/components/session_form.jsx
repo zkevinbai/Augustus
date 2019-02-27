@@ -44,53 +44,52 @@ class UserForm extends React.Component {
 
                     {(this.props.formType === "Login Form")?
                 (
-                    <div className="login">
-                                <input
-                                    type="text"
-                                    placeholder="username or email"
-                                    value={this.state.credential}
-                                    onChange={this.handleChange("credential")}
-                                />
-                                <br />
+                    <div className="sessionInput">
+                        <input
+                            type="text"
+                            placeholder="username or email"
+                            value={this.state.credential}
+                            onChange={this.handleChange("credential")}
+                        />
+                        <br />
 
-                                <input
-                                    type="password"
-                                    placeholder="password"
-                                    value={this.state.password}
-                                    onChange={this.handleChange("password")}
-                                />
-                                <br />
-                            </div>
-                            ) :
-                            (
-                    <div className="signup">
-                                <input
-                                    type="text"
-                                    placeholder="username"
-                                    value={this.state.username}
-                                    onChange={this.handleChange("username")}
-                                />
-                                <br />
+                        <input
+                            type="password"
+                            placeholder="password"
+                            value={this.state.password}
+                            onChange={this.handleChange("password")}
+                        />
+                        <br />
+                    </div>
+                    ) :
+                    (
+                    <div className="sessionInput">
+                        <input
+                            type="text"
+                            placeholder="username"
+                            value={this.state.username}
+                            onChange={this.handleChange("username")}
+                        />
+                        <br />
 
-                                <input
-                                    type="text"
-                                    placeholder="email"
-                                    value={this.state.email}
-                                    onChange={this.handleChange("email")}
-                                />
-                                <br />
+                        <input
+                            type="text"
+                            placeholder="email"
+                            value={this.state.email}
+                            onChange={this.handleChange("email")}
+                        />
+                        <br />
 
-                                <input
-                                    type="password"
-                                    placeholder="password"
-                                    value={this.state.password}
-                                    onChange={this.handleChange("password")}
-                                />
-                                <br />
-                            </div>
-                )
-                            }
-                        <input type="submit" value="Continue" />
+                        <input
+                            type="password"
+                            placeholder="password"
+                            value={this.state.password}
+                            onChange={this.handleChange("password")}
+                        />
+                        <br />
+                    </div>
+                     )}
+                        <input className="continue" type="submit" value="Continue" />
                     </form>
                 </div>
             );
