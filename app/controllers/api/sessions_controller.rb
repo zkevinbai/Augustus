@@ -7,7 +7,7 @@ class Api::SessionsController < ApplicationController
             login(@user)
             render :show;
         else
-            render json: ["Sigin credentials invalid"], status: 404
+            render json: ["Signin credentials invalid"], status: 404
         end
     end
 
