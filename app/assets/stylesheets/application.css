@@ -28,9 +28,10 @@ h1, h2, h3, p, form, a {
     background: rgba(255, 255, 255, 0.5)
 }
 
-a{
+a, button{
     color: rgb(98, 12, 232);
     text-decoration: none;
+    font-size: 20px;
 }
 
 /* -------------------------- GREETING STYLING ------------------------------ */
@@ -45,10 +46,13 @@ a{
     grid-column: 1/4;
 }
 
+.Greeting button{
+    grid-column: 2;
+}
+
 .Greeting a{
     grid-row: 2;
     padding-top: 20px;
-    font-size: 20px;
 }
 
 .Greeting a :nth-child(1){
