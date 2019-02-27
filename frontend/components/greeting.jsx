@@ -21,11 +21,16 @@ const Greeting = (props) => {
             <div className="Greeting" >
                 <h2>{ `no present user` }</h2>
                 
-                <Link to="/">Root</Link>
-                
+                {/* <Link to="/">Root</Link> */}
+
                 <Link to="/signup" >Signup</Link>
                 
                 <Link to="/login">Login</Link>
+
+                <button
+                    onClick={() => props.demoLogin()}
+                >Demo Login</button>
+
             </div>
         )
     }
