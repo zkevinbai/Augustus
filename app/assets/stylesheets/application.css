@@ -22,6 +22,10 @@ body{
     /* background-image: url(Cole_Thomas_TCOE_Destruction_1836.jpg); */
     background-size: cover; 
     background-repeat:no-repeat;
+    font-family: 'Righteous', cursive;
+}
+h1, h2, h3 {
+    font-family: 'Abril Fatface', cursive;
 }
 
 h1, h2, h3, p, form, a {
@@ -32,6 +36,7 @@ a, button{
     color: rgb(98, 12, 232);
     text-decoration: none;
     font-size: 20px;
+    font-family: 'Righteous', cursive;
 }
 
 /* -------------------------- GREETING STYLING ------------------------------ */
@@ -85,11 +90,5 @@ a, button{
 .sessionErrors{
     color: rgb(232, 44, 12);
 };
+g
 
-
-/* Images
-Cole_Thomas_TCOE_Savage_1836.jpg 
-Cole_Thomas_TCOE_Arcadian_1836.jpg 
-Cole_Thomas_TCOE_Consumation_1836.jpg 
-Cole_Thomas_TCOE_Destruction_1836.jpg 
-*/
