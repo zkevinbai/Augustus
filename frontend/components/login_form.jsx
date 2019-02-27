@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -27,6 +28,7 @@ class LoginForm extends React.Component {
         console.log(this.state);
         return(
             <div>
+                <Link to="/">Root</Link>
                 <form onSubmit={ this.handleSubmit } >
                     <h1>New Session</h1>
                     {/* <h3>placeholder for OAuth</h3>

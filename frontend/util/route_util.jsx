@@ -8,10 +8,7 @@ const mapStateToProps = (storeState) => {
 
 const Auth = 
 ( { component: Component, path, loggedIn, exact} ) => (
-    <Route 
-        path={ path } 
-        exact={ exact } 
-        render={ (props) => (
+    <Route path={ path } exact={ exact } render={ (props) => (
             !loggedIn ? (
                 <Component {...props} />
             ) : (
@@ -21,6 +18,6 @@ const Auth =
     />
 );
 
-const AuthRoute = connect(mapStateToProps, null)(Auth);
+const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
 
 export default AuthRoute;
