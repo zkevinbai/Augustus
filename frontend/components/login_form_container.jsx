@@ -9,8 +9,8 @@ import LoginForm from './login_form';
 // my preferred pattern is to include ownProps and use explicit return
 const mapStateToProps = (storeState, ownProps) => {
     let errors = [];
-    if (storeState.errors.session.errors) {
-        errors = Object.values(storeState.errors.session.errors);
+    if (storeState.errors.session) {
+        errors = Object.values(storeState.errors.session);
     }
 
     return ({

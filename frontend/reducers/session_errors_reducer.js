@@ -5,21 +5,21 @@ import {
 } from "../actions/session_actions";
 import { merge } from 'lodash';
 
-let newState = {};
-const sessionErrorsReducer = (oldState = {}, action) => {
+let newState = [];
+const sessionErrorsReducer = (oldState = [], action) => {
     Object.freeze(oldState);
 
     switch (action.type) {
         case RECEIVE_SESSION_ERRORS:
-            newState = merge({}, oldState, {errors: action.errors.responseJSON});
+            newState = oldState.concat(action.errors.responseJSON);
             return newState;
 
         case RECEIVE_CURRENT_USER:
-            newState = {};
+            newState = [];
             return newState;
 
         case CLEAR_SESSION_ERRORS:
-            newState = {};
+            newState = [];
             return newState;
             
         default:

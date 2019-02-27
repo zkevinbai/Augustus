@@ -34,7 +34,7 @@ class UserForm extends React.Component {
         // console.log(this.props.errors);
         return (
             <div className="sessionForm">
-                <Link to="/">Root</Link>
+                {/* <Link to="/">Root</Link> */}
 
                 <form onSubmit={this.handleSubmit} >
                     <h1>Signup Form</h1>

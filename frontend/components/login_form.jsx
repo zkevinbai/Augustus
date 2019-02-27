@@ -31,9 +31,10 @@ class LoginForm extends React.Component {
     render(){
         // console.log(this.state);
         // console.log(this.props.errors);
+
         return(
             <div className="sessionForm">
-                <Link to="/">Root</Link>
+                {/* <Link to="/">Root</Link> */}
 
                 <form onSubmit={ this.handleSubmit } >
                     <h1>Login Form</h1>
