@@ -14,7 +14,7 @@ const mapStateToProps = (storeState, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    logout: () => dispatch(logout)
+    logout: () => dispatch(logout())
 });
 
 export default connect( mapStateToProps, mapDispatchToProps )( Greeting );

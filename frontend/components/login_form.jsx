@@ -1,6 +1,6 @@
 import React from 'react';
 
-class SessionForm extends React.Component {
+class LoginForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -24,10 +24,11 @@ class SessionForm extends React.Component {
     }
 
     render(){
+        console.log(this.state);
         return(
             <div>
-                <form onSubmit={this.handleSubmit} >
-
+                <form onSubmit={ this.handleSubmit } >
+                    <h1>New Session</h1>
                     {/* <h3>placeholder for OAuth</h3>
 
                     <p>or</p> */}
@@ -40,7 +41,8 @@ class SessionForm extends React.Component {
                         value={ this.state.credential }
                         onChange={ this.handleChange("credential") }
                     />
-
+                    <br/>
+                    
                     <input 
                         type="password"
                         placeholder="password"
@@ -56,4 +58,4 @@ class SessionForm extends React.Component {
     }
 }
 
-export default SessionForm;
+export default LoginForm;
