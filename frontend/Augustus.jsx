@@ -2,10 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as SessionApiUtil from './util/session_api_util';
 import * as SessionActions from './actions/session_actions';
+import configureStore from './store/store';
+import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
     const rootEl = document.getElementById('root');
-
+    const store = configureStore();
 
     // Window AJAX -------------------------------------------------------------
     // window.signup = SessionApiUtil.signup;
@@ -20,8 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.deleteAccount = SessionActions.deleteAccount;
     
     // Window Store ------------------------------------------------------------
+    window.store = store;
     window.getState = store.getState;
     window.dispatch = store.dispatch;
 
-    ReactDOM.render(<h1 id="img">Root Placeholder</h1>, rootEl);
+    ReactDOM.render(< Root store={store} />, rootEl);
 });
