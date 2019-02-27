@@ -25,7 +25,8 @@ class LoginForm extends React.Component {
     }
 
     render(){
-        console.log(this.state);
+        // console.log(this.state);
+        console.log(this.props);
         return(
             <div>
                 <Link to="/">Root</Link>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class UserForm extends React.Component {
     constructor(props) {
@@ -28,6 +29,8 @@ class UserForm extends React.Component {
         console.log(this.props);
         return (
             <div>
+                <Link to="/">Root</Link>
+
                 <form onSubmit={this.handleSubmit} >
                     <h1>New User</h1>
 
