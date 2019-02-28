@@ -95,17 +95,17 @@ a, button{
     height: 100vh;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 1fr);
+    grid-template-rows: 35px repeat(9, 1fr);
 }
 
 .splashBody{
     grid-column: 2/10;
     grid-row: 2/10;
-    background: rgba(255, 255, 255, 0.5);   
+    background: rgba(255, 255, 255, 0.5);
 
     display: grid;
-    grid-template-columns: 50px 1fr 50px;
-    grid-template-rows: 50px 1fr 50px;
+    grid-template-columns: 25px 1fr 25px;
+    grid-template-rows: 25px 1fr 25px;
 }
 
 .splashFeatures{
@@ -116,7 +116,8 @@ a, button{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 75px repeat(2, 1fr);
-
+    min-width: 0;
+    min-height: 0;
     h1{
         color: rgba(255, 255, 255, 1);
     }
@@ -137,14 +138,17 @@ a, button{
     padding: 10px;
     margin: 10px;
     background: rgba(255, 255, 255, 0.5);
+    
     text-align: center;
     h1{
-        font-size: 20px;
+        color: rgba(98, 12, 232, 1);
+        font-size: 5vh;
     }
     i{
         color: rgba(255, 255, 255, 1);
         margin-top: 10px;
-        font-size: 100px;
+        // font-size: 100px;
+        font-size: 18vh;
     }
 }
 
