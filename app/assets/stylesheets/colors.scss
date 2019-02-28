@@ -1,0 +1,7 @@
+// variable
+$red: rgb(232, 44, 12);
+
+// mixin
+%box-shadow{
+    box-shadow: 0px 4px 10px 1px black, 0px -4px 10px 1px;
+}
