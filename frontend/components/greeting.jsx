@@ -6,7 +6,7 @@ const Greeting = (props) => {
     if (props.user){
         return (
         <div className="Greeting" >
-            <h2>{`hi ${props.user.username}`}</h2>
+            {/* <h2>{`hi ${props.user.username}`}</h2> */}
             <button 
                 onClick={ () => props.logout() }
             >Sign Out</button>
@@ -19,8 +19,7 @@ const Greeting = (props) => {
     } else {
         return (
             <div className="Greeting" >
-                <h2>{ `no present user` }</h2>
-                
+                {/* <h2>{ `no present user` }</h2> */}
                 {/* <Link to="/">Root</Link> */}
 
                 <Link to="/signup" >Signup</Link>

@@ -4,15 +4,36 @@
 
 
 /* ------------------------ SESSION FORM STYLING----------------------------- */
+
+.savage{
+    background-image: image-url('Cole_Thomas_TCOE_Savage_1836.jpg');
+}
+.arcadian{
+    background-image: image-url('Cole_Thomas_TCOE_Arcadian_1836.jpg');
+}
+.consumation{
+    background-image: image-url('Cole_Thomas_TCOE_Consumation_1836.jpg');
+}
+.destruction{
+    background-image: image-url('Cole_Thomas_TCOE_Destruction_1836.jpg');
+}
+
 .sessionForm{
+    width: 100vw; 
+    height: 100vh;
+    overflow: hidden;
+
+    background-size: cover;
+    background-repeat:no-repeat;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: 20px repeat(3, 1fr);
     align-items: center;
     justify-items: center;
 
     form{
-        grid-row: 1/3;
+        grid-row: 2/4;
         grid-column: 2;
 
         padding: 35px;

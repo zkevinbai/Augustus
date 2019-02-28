@@ -4,12 +4,11 @@
 
 /* -------------------------- GENERAL STYLING ------------------------------- */
 body{
-    background-image: image-url('Cole_Thomas_TCOE_Savage_1836.jpg');
+    // background-image: image-url('Cole_Thomas_TCOE_Savage_1836.jpg');
+    // background-image: image-url('Cole_Thomas_TCOE_Arcadian_1836.jpg');
+    // background-image: image-url('Cole_Thomas_TCOE_Consumation_1836.jpg');
+    // background-image: image-url('Cole_Thomas_TCOE_Destruction_1836.jpg');
 
-    /* image_url(Cole_Thomas_TCOE_Savage_1836.jpg); */
-    /* background-image: url(Cole_Thomas_TCOE_Arcadian_1836.jpg); */
-    /* background-image: url(Cole_Thomas_TCOE_Consumation_1836.jpg); */
-    /* background-image: url(Cole_Thomas_TCOE_Destruction_1836.jpg); */
     background-size: cover;
     background-repeat:no-repeat;
     font-family: 'Comfortaa', cursive;
@@ -35,7 +34,7 @@ a, button{
 }
 
 .Greeting a{
-    padding-top: 20px;
+    // padding-top: 20px;
 }
 
 .Greeting a, .Greeting button{

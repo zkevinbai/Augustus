@@ -7,6 +7,12 @@ class UserForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    // componentDidMount(){
+    //     const backgrounds = ["savage", "arcadian", "consumation", "destruction"];
+    //     const rand = Math.floor(Math.random(3));
+    //     this.state.formClasses = "sessionForm " + backgrounds[rand];
+    // }
+
     componentWillUnmount() {
         this.props.clearErrors();
     }
@@ -28,8 +34,14 @@ class UserForm extends React.Component {
     }
     
     render() {
+        const backgrounds = ["savage", "arcadian", "consumation", "destruction"];
+        let rand;
+        rand = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+        let formClasses;
+        formClasses = "sessionForm " + rand;
+        // debugger
         return (
-            <div className="sessionForm">
+            <div className={formClasses}>
                 <form onSubmit={this.handleSubmit} >
                     <div className="sessionHeader">
                         <img src={window.logoURL} />
