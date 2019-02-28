@@ -36,7 +36,7 @@ a, button{
 }
 
 .Greeting img{
-    margin-top: 0px;
+    margin-top: 5px;
     height: 120px;
     z-index: 2;
 }
@@ -50,7 +50,7 @@ a, button{
     padding-bottom: 10px;
 
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: 150px repeat(9, 1fr);
 }
  
 .navbar a{
@@ -73,18 +73,6 @@ a, button{
         font-size: 50px;
         color: rgba(255, 255, 255, 1);
     }
-}
-
-.navFeatures{
-    grid-column: 5;
-}
-
-.navHelp{
-    grid-column: 6;
-}
-
-.navAbout{
-    grid-column: 7;
 }
 
 .navSignup{
@@ -110,4 +98,33 @@ a, button{
     // background: rgba(255, 255, 255, 0.5);;
     width: 100vw; 
     height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+}
+
+.splashBody{
+    grid-column: 2/10;
+    grid-row: 2/10;
+    background: rgba(255, 255, 255, 0.5);
+
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    grid-template-rows: 50px 1fr 50px;
+}
+
+.splashFeatures{
+    grid-column: 2;
+    grid-row: 2;
+    background: rgba(98, 12, 232, 0.75);
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50px repeat(2, 1fr);
+}
+
+.splashFooter{
+    grid-column: 1/11;
+    grid-row: 10;
+    // background: lightblue;
 }

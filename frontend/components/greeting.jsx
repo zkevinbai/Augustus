@@ -31,19 +31,6 @@ const Greeting = (props) => {
                         <h1>Augustus</h1>
                     </div>
 
-                    <div className="navFeatures">
-                        <h1>Features</h1>
-
-                    </div>
-
-                    <div className="navHelp">
-                        <h1>Contact</h1>
-                    </div>
-
-                    <div className="navAbout">
-                        <h1>About</h1>
-                    </div>
-
                     <Link to="/signup" className="navSignup">Signup</Link>
 
                     <Link to="/login" className="navLogin">Login</Link>
