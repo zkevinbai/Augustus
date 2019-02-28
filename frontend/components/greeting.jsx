@@ -9,7 +9,9 @@ const Greeting = (props) => {
             {/* <h2>{`hi ${props.user.username}`}</h2> */}
             <button 
                 onClick={ () => props.logout() }
-            >Sign Out</button>
+                className="navLogout"
+                >Logout
+            </button>
 
             {/* <button
                 onClick={() => props.deleteAccount(props.user)}
