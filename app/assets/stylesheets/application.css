@@ -98,9 +98,6 @@ a, button{
     font-size: 50px;
 }
 
-.sessionHeader div{
-    background-image: url(Favicon.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 100px;
+.sessionHeader img{
+    height: 120px;
 }
