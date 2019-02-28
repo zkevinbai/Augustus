@@ -15,12 +15,14 @@
  */
 
 /* -------------------------- GENERAL STYLING ------------------------------- */
-body{
-    background-image: url(Cole_Thomas_TCOE_Savage_1836.jpg);
-    /* background-image: url(Cole_Thomas_TCOE_Arcadian_1836.jpg); */
-    /* background-image: url(Cole_Thomas_TCOE_Consumation_1836.jpg); */
-    /* background-image: url(Cole_Thomas_TCOE_Destruction_1836.jpg); */
-    background-size: cover; 
+/* body{
+    background-image: image-url('Cole_Thomas_TCOE_Savage_1836.jpg');
+
+    image_url(Cole_Thomas_TCOE_Savage_1836.jpg);
+    background-image: url(Cole_Thomas_TCOE_Arcadian_1836.jpg);
+    background-image: url(Cole_Thomas_TCOE_Consumation_1836.jpg);
+    background-image: url(Cole_Thomas_TCOE_Destruction_1836.jpg);
+    background-size: cover;
     background-repeat:no-repeat;
     font-family: 'Comfortaa', cursive;
 }
@@ -34,8 +36,10 @@ a, button{
     text-decoration: none;
     font-size: 20px;
 }
+*/
 
 /* -------------------------- GREETING STYLING ------------------------------ */
+/* 
 .Greeting{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -48,7 +52,6 @@ a, button{
 }
 
 .Greeting a, .Greeting button{
-    /* grid-row: 2; */
     border: 1px solid white;
     border-radius: 10px;
 }
@@ -57,10 +60,10 @@ a, button{
     grid-column: 1/4;
     grid-row: 1;
     border-radius: 10px;
-}
+} */
 
 /* ------------------------ SESSION FORM STYLING----------------------------- */
-.sessionForm{
+/* .sessionForm{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -100,4 +103,4 @@ a, button{
 
 .sessionHeader img{
     height: 120px;
-}
+}*/
