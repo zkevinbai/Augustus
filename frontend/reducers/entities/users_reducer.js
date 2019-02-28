@@ -1,7 +1,7 @@
 import {
     RECEIVE_CURRENT_USER,
     DELETE_CURRENT_USER
-} from "../actions/session_actions";
+} from "../../actions/session_actions";
 import { merge } from 'lodash';
 
 let newState = {};

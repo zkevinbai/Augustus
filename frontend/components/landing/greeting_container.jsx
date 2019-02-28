@@ -4,7 +4,7 @@ import {
     logout,
     deleteAccount,
     login
-} from '../actions/session_actions';
+} from '../../actions/session_actions';
 import Greeting from './greeting';
 
 // my preferred pattern is to include ownProps and use explicit return

@@ -1,8 +1,9 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import GreetingContainer from './greeting_container';
-import Splash from './splash';
+import GreetingContainer from './landing/greeting_container';
+import Splash from './landing/splash';
+
 import SignupFormContainer from './session/signup_form_container';
 import LoginFormContainer from './session/login_form_container';
 import LoginDemoFormContainer from './session/login_demo_form_container';
