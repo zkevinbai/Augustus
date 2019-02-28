@@ -1,0 +1,91 @@
+.inkPage{
+    margin:0;
+    padding:0;
+}
+
+.bars{
+    display: grid;
+    grid-template-columns: 240px 351px 1fr;
+    grid-template-rows: repeat(10, 1fr);
+    max-height: 100vh;
+    min-height: 100vh;
+    h1, h2, p, ul, li {
+        border: 2px solid;
+        margin: 1px;
+    }
+}
+
+/*----------------------------------- left nav -------------------------------*/
+.lbar{
+    /* background: lightblue; */
+    background: rgb(26, 26, 26);
+    border-color: white;
+    color: white;
+    grid-column: 1;
+    grid-row: 1/11;
+    display: grid;
+    grid-template-rows: 68px 50px 50px 1fr;
+}
+
+.lbar ul{
+    overflow: scroll;
+    list-style: none;
+    padding-left: 0;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.lbar li{
+    height: 25px;
+    margin-bottom: 2px;
+    display: block;
+    text-align: left;
+}
+
+/*----------------------------------- middle nav -----------------------------*/
+.mbar{
+    /* background: lightcoral; */
+    background: rgb(248, 248, 248);
+    grid-column: 2;
+    grid-row: 1/11;
+    display: grid;
+    grid-template-rows: 135px 1fr
+}
+
+.mbar ul{
+    overflow: scroll;
+    list-style: none;
+    padding-left: 0;
+}
+
+.mbar li {
+    /* background: gray; */
+    height: 115px;
+    padding: none;
+    margin-left: 0;
+}
+
+.mbar li:hover {
+    background: rgb(242, 242, 242)
+}
+
+/*----------------------------------- right nav ------------------------------*/
+.content{
+    /* background: lightgreen; */
+    background: rgb(255, 255, 255);
+    grid-column: 3;
+    grid-row: 1/11;
+    display: grid;
+    grid-template-rows: 60px 1fr 50px;
+    /* background-image: url("./Cole_Thomas_The_Consummation_The_Course_of_the_Empire_1836.jpg"); */
+}
+
+/*----------------------------------- othe -----------------------------------*/
+
+.yellow{
+    background: rgb(240, 181, 81);
+}
+
+.green{
+    background: rgb(15, 156, 64);
+}
