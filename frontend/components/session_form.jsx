@@ -26,12 +26,18 @@ class UserForm extends React.Component {
         event.preventDefault();
         this.props.formAction(this.state);
     }
-
+    
     render() {
+
         return (
             <div className="sessionForm">
                 <form onSubmit={this.handleSubmit} >
-                    <h1>{this.props.formType}</h1>
+                    <h1 className="sessionHeader">
+                    <div>
+                    </div>
+                    Augustus</h1>
+
+                    {/* <h1>{this.props.formType}</h1> */}
 
                     {/* <h3>placeholder for OAuth</h3>
                     <p>or</p> */}

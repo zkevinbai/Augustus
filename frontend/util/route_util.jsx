@@ -18,6 +18,4 @@ const Auth =
     />
 );
 
-const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
-
-export default AuthRoute;
+export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));

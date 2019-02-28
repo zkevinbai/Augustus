@@ -11,9 +11,9 @@ const Greeting = (props) => {
                 onClick={ () => props.logout() }
             >Sign Out</button>
 
-            <button
+            {/* <button
                 onClick={() => props.deleteAccount(props.user)}
-            >Delete Account</button>
+            >Delete Account</button> */}
         </div>
         )
     } else {

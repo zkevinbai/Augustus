@@ -93,3 +93,14 @@ a, button{
     background: rgb(98, 12, 232);
     color: rgb(237, 247, 110);
 }
+
+.sessionHeader{
+    font-size: 50px;
+}
+
+.sessionHeader div{
+    background-image: url(Favicon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100px;
+}

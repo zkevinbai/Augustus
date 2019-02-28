@@ -5,20 +5,20 @@ import { logout } from "../frontend/util/session_api_util";
 
 // Window variables ------------------------------------------------------------
 
-    let k2 = {
-        username: "k2",
-        email: "k2@k2.com",
-        password: "password"
-    };
+    // let k2 = {
+    //     username: "k2",
+    //     email: "k2@k2.com",
+    //     password: "password"
+    // };
 
-    let k2login = {
-        credential: "k2",
-        password: "password"
-    };
+    // let k2login = {
+    //     credential: "k2",
+    //     password: "password"
+    // };
 
-    let k2delete = {
-        id: 5 //Change as needed
-    };
+    // let k2delete = {
+    //     id: 5 //Change as needed
+    // };
 
 // Window AJAX -----------------------------------------------------------------
 
@@ -72,10 +72,10 @@ import { logout } from "../frontend/util/session_api_util";
 
 // Window Actions Testing ------------------------------------------------------
 
-    signup(k2)(dispatch);
+    // signup(k2)(dispatch);
 
-    login(k2login)(dispatch);
+    // login(k2login)(dispatch);
 
-    logout()(dispatch);
+    // logout()(dispatch);
 
-    deleteAccount(k2delete)(dispatch);
+    // deleteAccount(k2delete)(dispatch);
