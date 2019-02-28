@@ -14,33 +14,24 @@ class UserForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.credentialShift = this.credentialShift.bind(this);
         this.passwordShift = this.passwordShift.bind(this);
-        this.coolLogin = this.coolLogin.bind(this);
+        this.hitSubmit = this.hitSubmit.bind(this);
     }
     
     componentDidMount() {
-        // debugger
         if(this.props.formType === "demo"){
-            console.log("demo");
-            console.log(this.props);
-            console.log(this.otto);
-            // this.coolLogin();
-
-            // this.clearCred = setInterval(this.credentialShift, 330);
-            // this.credentialShift();
-            // this.clearPass = setInterval(this.passwordShift, 330);
-            // this.passwordShift();
-            const promise = new Promise((resolve, reject) => {
+            var promise = new Promise((resolve, reject) => {
                 this.clearCred = setInterval(this.credentialShift, 330);
                 this.credentialShift();
                 this.clearPass = setInterval(this.passwordShift, 330);
                 this.passwordShift();
+                setTimeout(function () {
+                    resolve('cat');
+                }, 3600);
             });
 
-            promise.then( () => {
-                this.props.formAction(this.state);
-            });
-
-            // this.props.formAction(this.state);
+            promise.then( () => 
+                this.props.formAction(this.state)
+            );
         }
     }
 
@@ -61,7 +52,6 @@ class UserForm extends React.Component {
     passwordShift() {
         let shift;
         let newPass;
-
         if (this.otto[1].length === 0) {
             clearInterval(this.clearPass);
         } else {
@@ -73,24 +63,15 @@ class UserForm extends React.Component {
         }
     }
 
-    coolLogin(){
-        // debugger
-        // let shift;
-        // let newCred;
-        // let newPass;
-        // while (this.otto[0].length !== 0){
-        //     shift = this.otto[0].shift();
-        //     newCred = this.state.credential + shift;
-        //     this.state.credential = newCred;
-        // } 
-        
-        // while (this.otto[1].length !== 0){
-        //     shift = this.otto[1].shift();
-        //     newPass = this.state.password + shift;
-        //     this.state.password = newPass;
-        // } 
-        
-        // this.props.formAction(this.state);
+    hitSubmit(){
+        this.props.formAction(this.state);
+        clearInterval(this.submitId);
+    }
+
+    componentDidUpdate() {
+        if (this.otto === [[],[]]){
+            this.props.formAction(this.state);
+        }
     }
 
     componentWillUnmount() {
