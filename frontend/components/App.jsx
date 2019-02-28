@@ -11,8 +11,7 @@ import {AuthRoute} from '../util/route_util';
 const App = () => (
     <div className="landingPage" >
         <Route path="/" exact component={GreetingContainer} ></Route>
-        <Route path="/" exact component={Splash} ></Route>
-
+        <AuthRoute path="/" exact component={Splash} />
         <div className="SessionForms">
             <AuthRoute path="/login" exact component={ LoginFormContainer } />
             <AuthRoute path="/signup" exact component={ SignupFormContainer } />
