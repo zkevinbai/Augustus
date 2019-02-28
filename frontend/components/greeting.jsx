@@ -24,17 +24,25 @@ const Greeting = (props) => {
                 {/* <h2>{ `no present user` }</h2> */}
                 {/* <Link to="/">Root</Link> */}
 
+                <img src={window.logoURL} />
                 <div className="navbar" >
-
-                    <div className="navPlans">
-                        <h2>Plans</h2>
-                        <div className="dropdown-content">
-                            <h3></h3>
-                        </div>
+ 
+                    <div className="navLogo">
+                        <h1>Augustus</h1>
                     </div>
-                    <div className="navFeatures">Features</div>
-                    <div className="navHelp">Help & Learning</div>
-                    <div className="navAbout">About Us</div>
+
+                    <div className="navFeatures">
+                        <h1>Features</h1>
+
+                    </div>
+
+                    <div className="navHelp">
+                        <h1>Contact</h1>
+                    </div>
+
+                    <div className="navAbout">
+                        <h1>About</h1>
+                    </div>
 
                     <Link to="/signup" className="navSignup">Signup</Link>
 

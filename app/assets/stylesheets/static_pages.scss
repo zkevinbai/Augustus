@@ -14,9 +14,9 @@ body{
     font-family: 'Comfortaa', cursive;
 }
 
-h1, h2, h3, p, form, a, button {
-    background: rgba(255, 255, 255, 0.5)
-}
+// h1, h2, h3, p, form, a, button {
+//     background: rgba(255, 255, 255, 0.5)
+// }
 
 a, button{
     color: rgb(98, 12, 232);
@@ -30,9 +30,15 @@ a, button{
 .Greeting{
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: 20px 1fr 20px;
+    grid-template-rows: 30px 1fr 30px;
     background: rgba(255, 255, 255, 0.5);
     text-align: center;
+}
+
+.Greeting img{
+    margin-top: 0px;
+    height: 120px;
+    z-index: 2;
 }
 
 .navbar{
@@ -46,16 +52,39 @@ a, button{
     display: grid;
     grid-template-columns: repeat(10, 1fr);
 }
-
-// case in point
-
-a, button{
+ 
+.navbar a{
     border: 1px solid white;
     background:rgba(255, 255, 255, 1);
-    // border-radius: 10px;
     margin: 3px;
     align-content: center;
     justify-content: center;
+    font-size: 35px;    
+}
+
+.navLogo{
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-content: center;
+    justify-content: left;
+
+    h1{
+        font-size: 50px;
+        color: rgba(255, 255, 255, 1);
+    }
+}
+
+.navFeatures{
+    grid-column: 5;
+}
+
+.navHelp{
+    grid-column: 6;
+}
+
+.navAbout{
+    grid-column: 7;
 }
 
 .navSignup{
@@ -66,12 +95,8 @@ a, button{
     grid-column: 9;
 }
 
-// case in point
 .navDemo{
     grid-column: 10;
-    // background: red;
-    // border-style: solid;
-    // border-width: 5px;
 }
 
 .navLogout{
