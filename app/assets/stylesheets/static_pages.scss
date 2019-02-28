@@ -14,10 +14,6 @@ body{
     font-family: 'Comfortaa', cursive;
 }
 
-// h1, h2, h3, p, form, a, button {
-//     background: rgba(255, 255, 255, 0.5)
-// }
-
 a, button{
     color: rgb(98, 12, 232);
     text-decoration: none;
@@ -120,7 +116,73 @@ a, button{
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 50px repeat(2, 1fr);
+    grid-template-rows: 75px repeat(2, 1fr);
+
+    h1{
+        color: rgba(255, 255, 255, 1);
+    }
+}
+
+.featureHead{
+    grid-column: 1;
+    grid-row: 1;
+    // color: rgba(255, 255, 255, 1);
+    border-bottom: 5px solid rgba(255, 255, 255, 1);
+    // border-right: 5px solid rgba(255, 255, 255, 1);
+    padding: 15px;
+    padding-left: 10px;
+    font-size: 60px;
+}
+
+.featureFeature{
+    padding: 10px;
+    margin: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    h1{
+        font-size: 20px;
+    }
+    i{
+        color: rgba(255, 255, 255, 1);
+        margin-top: 10px;
+        font-size: 100px;
+    }
+}
+
+.featureAuth{
+    grid-column: 1;
+    grid-row: 2;
+    i{
+        margin-left: 25px;
+    }
+}
+
+.featureNotebooks{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.featureNotes{
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.featureTags{
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.featureEditing{
+    grid-column: 2;
+    grid-row: 3;
+    i{
+        margin-left: 20px;
+    }
+}
+
+.featurePlaceholder{
+    grid-column: 3;
+    grid-row: 3;
 }
 
 .splashFooter{

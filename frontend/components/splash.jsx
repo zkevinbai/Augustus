@@ -6,9 +6,33 @@ const Splash = (props) => {
         <div className="Splash" >                    
             <div className="splashBody">
                 <div className="splashFeatures">
-                    <h1>Features</h1>
-
-                    
+                    {/* <div className="featureHead"> */}
+                        <h1 className="featureHead">Features</h1>
+                    {/* </div> */}
+                    <div className="featureAuth featureFeature">
+                        <h1>Authentication</h1>
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <div className="featureNotebooks featureFeature">
+                        <h1>Notebooks</h1>
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div className="featureNotes featureFeature">
+                        <h1>Notes</h1>
+                        <i class="fas fa-sticky-note"></i>
+                    </div>
+                    <div className="featureTags featureFeature">
+                        <h1>Tags</h1>
+                        <i class="fas fa-bookmark"></i>
+                    </div>
+                    <div className="featureEditing featureFeature">
+                        <h1>Rich Text Editing</h1>
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <div className="featurePlaceholder featureFeature">
+                        <h1>Search</h1>
+                        <i class="fas fa-search"></i>
+                    </div>
 
                 </div>
             </div>
