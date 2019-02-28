@@ -31,9 +31,10 @@ class UserForm extends React.Component {
         return (
             <div className="sessionForm">
                 <form onSubmit={this.handleSubmit} >
-                    <h1 className="sessionHeader">
-                    <img src={window.logoURL} />
-                    Augustus</h1>
+                    <div className="sessionHeader">
+                        <img src={window.logoURL} />
+                        <h1>Augustus</h1> 
+                    </div>
 
                     {/* <h1>{this.props.formType}</h1> */}
 
