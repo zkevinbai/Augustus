@@ -22,14 +22,18 @@ const Greeting = (props) => {
                 {/* <h2>{ `no present user` }</h2> */}
                 {/* <Link to="/">Root</Link> */}
 
-                <Link to="/signup" >Signup</Link>
-                
-                <Link to="/login">Login</Link>
+                <div className="navbar" >
+                    <Link to="/signup" className="navSignup">Signup</Link>
 
-                <button
-                    onClick={() => props.demoLogin()}
-                >Demo Login</button>
+                    <Link to="/login" className="navLogin">Login</Link>
 
+                    <Link to="/demologin" className="demologin">Demo Login</Link>
+
+                    <button
+                        onClick={() => props.demoLogin()}
+                        className="navDemo"
+                    >Demo Button</button>
+                </div>
             </div>
         )
     }

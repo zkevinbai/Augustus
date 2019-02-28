@@ -21,7 +21,10 @@ const demoUser = {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    demoLogin: () => dispatch(login(demoUser)),
+    demoLogin: () => {
+        
+        return dispatch(login(demoUser));
+    },
     logout: () => dispatch(logout()),
     deleteAccount: (user) => dispatch(deleteAccount(user))
 });
