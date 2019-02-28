@@ -27,12 +27,7 @@ const Greeting = (props) => {
 
                     <Link to="/login" className="navLogin">Login</Link>
 
-                    <Link to="/demologin" className="demologin">Demo Login</Link>
-
-                    <button
-                        onClick={() => props.demoLogin()}
-                        className="navDemo"
-                    >Demo Button</button>
+                    <Link to="/demologin" className="demologin">Demo</Link>
                 </div>
             </div>
         )

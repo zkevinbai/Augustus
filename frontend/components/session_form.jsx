@@ -9,12 +9,11 @@ class UserForm extends React.Component {
             this.otto = props.otto;
             this.clearCred = 0;
             this.clearPass = 0;
+            this.credentialShift = this.credentialShift.bind(this);
+            this.passwordShift = this.passwordShift.bind(this);
+            this.hitSubmit = this.hitSubmit.bind(this);
         }
-
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.credentialShift = this.credentialShift.bind(this);
-        this.passwordShift = this.passwordShift.bind(this);
-        this.hitSubmit = this.hitSubmit.bind(this);
     }
     
     componentDidMount() {
