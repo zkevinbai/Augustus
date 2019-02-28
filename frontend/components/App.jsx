@@ -12,13 +12,12 @@ import SignupFormContainer from './session/signup_form_container';
 import LoginFormContainer from './session/login_form_container';
 import LoginDemoFormContainer from './session/login_demo_form_container';
 
-import InkContainer from './ink/ink';
+import InkContainer from './ink/ink_container';
 
 const App = () => (
     <div className="App" >
         <div className="landingPage" >
-            <Route path="/" exact component={GreetingContainer} ></Route>
-            {/* <AuthRoute path="/" exact component={GreetingContainer} /> */}
+            <AuthRoute path="/" exact component={GreetingContainer} />
             <AuthRoute path="/" exact component={Splash} />
 
             <div className="SessionForms">

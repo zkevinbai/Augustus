@@ -7,11 +7,11 @@ const Greeting = (props) => {
         return (
         <div className="Greeting" >
             {/* <h2>{`hi ${props.user.username}`}</h2> */}
-            <button 
+            {/* <button 
                 onClick={ () => props.logout() }
                 className="navLogout"
                 >Logout
-            </button>
+            </button> */}
 
             {/* <button
                 onClick={() => props.deleteAccount(props.user)}

@@ -5,7 +5,13 @@ const Ink = (props) => {
     return (
         <div className="bars">
             <div className="lbar bar">
-                <h1>User Info</h1>
+                <h1>User Info
+                    <button
+                        onClick={() => props.logout()}
+                        className="navLogout"
+                        >Logout
+                    </button>
+                </h1>
                 <h1>Search Bar</h1>
                 <h1>Add New Note</h1>
                 <ul>
