@@ -1,7 +1,8 @@
 import React from 'react';
 import { debug } from 'util';
+import { Link } from 'react-router-dom';
 
-class UserForm extends React.Component {
+class SessionForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = props.user;
@@ -125,6 +126,7 @@ class UserForm extends React.Component {
                 (
                     <div className="sessionInput">
                         <input
+                            autoFocus
                             type="text"
                             placeholder="username or email"
                             value={this.state.credential}
@@ -144,6 +146,7 @@ class UserForm extends React.Component {
                     (
                     <div className="sessionInput">
                         <input
+                            autoFocus
                             type="text"
                             placeholder="username"
                             value={this.state.username}
@@ -175,4 +178,4 @@ class UserForm extends React.Component {
     }
 }
 
-export default UserForm;
+export default SessionForm;

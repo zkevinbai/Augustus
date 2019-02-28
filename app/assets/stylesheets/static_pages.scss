@@ -33,24 +33,29 @@ a, button{
     grid-template-rows: 20px 1fr 20px;
     // background: rgba(255, 255, 255, 0.5);
     text-align: center;
+}
 
-    .navbar{
-        grid-row: 2;
-        grid-column: 1/11;
-        background: rgba(98, 12, 232, 0.5);
+.navbar{
+    grid-row: 2;
+    grid-column: 1/11;
+    background: rgba(98, 12, 232, 0.75);
 
-        display: grid;
-        grid-template-columns: repeat(10, 1fr);
-    }
+    padding-top: 10px;
+    padding-bottom: 10px;
 
-    a, button{
-        border: 1px solid white;
-        background:rgba(255, 255, 255, 1);
-        border-radius: 10px;
-        margin: 3px;
-        align-content: center;
-        justify-content: center;
-    }
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+}
+
+// case in point
+
+a, button{
+    border: 1px solid white;
+    background:rgba(255, 255, 255, 1);
+    // border-radius: 10px;
+    margin: 3px;
+    align-content: center;
+    justify-content: center;
 }
 
 .navSignup{
@@ -61,8 +66,12 @@ a, button{
     grid-column: 9;
 }
 
+// case in point
 .navDemo{
     grid-column: 10;
+    // background: red;
+    // border-style: solid;
+    // border-width: 5px;
 }
 
 .navLogout{

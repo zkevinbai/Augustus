@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {
     login,
     clearSessionErrors
-} from '../actions/session_actions';
+} from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 const mapStateToProps = (storeState, ownProps) => {
@@ -15,14 +15,12 @@ const mapStateToProps = (storeState, ownProps) => {
         credential: "",
         password: ""
     };
-    let formType = "demo";
-    let otto = ["Octavian".split(""), "password".split("")];
+    let formType = "Login Form";
 
     return ({
         user,
         errors,
-        formType,
-        otto
+        formType
     });
 };
 
@@ -31,4 +29,6 @@ const mapDispatchToProps = (dispatch) => ({
     formAction: (user) => dispatch(login(user))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
+const LoginFormContainer = connect(mapStateToProps, mapDispatchToProps)(SessionForm);
+
+export default LoginFormContainer;

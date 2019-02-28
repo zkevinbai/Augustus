@@ -3,9 +3,9 @@ import { Route } from 'react-router-dom';
 
 import GreetingContainer from './greeting_container';
 import Splash from './splash';
-import SignupFormContainer from './signup_form_container';
-import LoginFormContainer from './login_form_container';
-import LoginDemoFormContainer from './login_demo_form_container';
+import SignupFormContainer from './session/signup_form_container';
+import LoginFormContainer from './session/login_form_container';
+import LoginDemoFormContainer from './session/login_demo_form_container';
 import {AuthRoute} from '../util/route_util';
 
 const App = () => (

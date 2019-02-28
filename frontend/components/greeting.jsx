@@ -25,11 +25,22 @@ const Greeting = (props) => {
                 {/* <Link to="/">Root</Link> */}
 
                 <div className="navbar" >
+
+                    <div className="navPlans">
+                        <h2>Plans</h2>
+                        <div className="dropdown-content">
+                            <h3></h3>
+                        </div>
+                    </div>
+                    <div className="navFeatures">Features</div>
+                    <div className="navHelp">Help & Learning</div>
+                    <div className="navAbout">About Us</div>
+
                     <Link to="/signup" className="navSignup">Signup</Link>
 
                     <Link to="/login" className="navLogin">Login</Link>
 
-                    <Link to="/demologin" className="demologin">Demo</Link>
+                    <Link to="/demologin" className="navDemo">Demo</Link>
                 </div>
             </div>
         )
