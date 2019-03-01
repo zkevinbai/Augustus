@@ -42,6 +42,37 @@
     text-align: left;
 }
 
+.userDropdown{
+    border: 2px solid;
+    border-color: white;
+    margin: 1px;
+
+    // text-align: center;
+    // justify-items: center;
+    // justify-content: center;
+
+    display: grid;
+    grid-template-columns: 20% 30% 50%;
+
+    img{
+        grid-column: 1;
+        grid-row: 1;
+        margin-top: 5px;
+        height:50px;
+    }
+    h1{
+        grid-column: 2;
+        grid-row: 1;
+        border: none;
+    }
+
+    button{
+        grid-column: 3;
+        grid-row: 1;
+        border: none;
+    }
+}
+
 /*----------------------------------- middle nav -----------------------------*/
 .mbar{
     /* background: lightcoral; */
