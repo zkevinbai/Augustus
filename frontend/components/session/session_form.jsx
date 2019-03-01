@@ -106,10 +106,12 @@ class SessionForm extends React.Component {
             <div className="sessionForm consumation">
 
                 <form onSubmit={this.handleSubmit} >
+                    <Link to="/">
                     <div className="sessionHeader">
                         <img src={window.logoURL} />
                         <h1>Augustus</h1> 
                     </div>
+                    </Link>
 
                     {/* <h1>{this.props.formType}</h1> */}
 
