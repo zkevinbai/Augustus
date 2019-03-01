@@ -11,7 +11,7 @@
     let notedelete = {
         id: 2 //Change as needed
     };
-
+ 
 // Window AJAX -----------------------------------------------------------------
 
     // Notebooks Index
