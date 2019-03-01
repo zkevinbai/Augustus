@@ -24,6 +24,8 @@
     grid-row: 1/11;
     display: grid;
     grid-template-rows: 68px 50px 70px repeat(7, 35px);
+    grid-template-rows: 68px 50px 70px repeat(22, 1fr);
+    overflow: scroll;
 }
 
 .lbar h1 {
@@ -175,12 +177,12 @@
 }
 
 .Notebooks{
+    grid-row: 6;
     a {
         display: grid;
         grid-template-columns: 25% 40% 35%;
     }
 }
-
 
 .Premium{
     &:hover{
