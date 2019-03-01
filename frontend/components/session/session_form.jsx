@@ -110,6 +110,11 @@ class SessionForm extends React.Component {
                     <div className="sessionHeader">
                         <img src={window.logoURL} />
                         <h1>Augustus</h1> 
+                        <div className="sessionErrors">
+                            {this.props.errors.map(error =>
+                                <p key={error.length} >{error}</p>
+                            )}
+                        </div>
                     </div>
                     </Link>
 
@@ -117,12 +122,6 @@ class SessionForm extends React.Component {
 
                     {/* <h3>placeholder for OAuth</h3>
                     <p>or</p> */}
-
-                    <div className="sessionErrors">
-                        {this.props.errors.map(error =>
-                            <p key={error.length} >{error}</p>
-                        )}
-                    </div>
 
                     {(this.props.formType === "Login Form" || this.props.formType === "demo" )?
                 (

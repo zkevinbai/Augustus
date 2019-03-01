@@ -49,7 +49,7 @@
     display: grid;
     grid-row: 1;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: 1fr 60px 60px;
 
     img{
         height: 150px;
@@ -66,12 +66,16 @@
 
         background: none;
     }
+    .sessionErrors{
+        grid-column: 1/4;
+        grid-row: 3;
+        color: rgb(232, 44, 12);
+        p{
+            background: rgba(255, 255, 255, 0.5);
+        }
+    }
 }
 
-.sessionErrors{
-    grid-row: 2;
-    color: rgb(232, 44, 12);
-}
 
 .sessionForm input{
     border: none;
