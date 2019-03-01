@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const store = configureStore(preLoadedState);
 
-
     // #########################################################################
         // ---------------------------TESTING START-----------------------------
 
