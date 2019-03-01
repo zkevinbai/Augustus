@@ -5,7 +5,7 @@
 /* -------------------------- GENERAL STYLING ------------------------------- */
 body{
     // background-image: image-url('Cole_Thomas_TCOE_Savage_1836.jpg');
-    background-image: image-url('Cole_Thomas_TCOE_Arcadian_1836.jpg');
+    // background-image: image-url('Cole_Thomas_TCOE_Arcadian_1836.jpg');
     // background-image: image-url('Cole_Thomas_TCOE_Consumation_1836.jpg');
     // background-image: image-url('Cole_Thomas_TCOE_Destruction_1836.jpg');
 
@@ -17,6 +17,30 @@ body{
 a, button{
     color: rgb(0, 0, 0);
     text-decoration: none;
+}
+
+/* ------------------------ BROKEN SITE STYLING ----------------------------- */
+.brokenReact{
+    height: 100vh;
+    width: 100vw;
+    background-image: image-url('Cole_Thomas_TCOE_Destruction_1836.jpg'); 
+    background-size: cover;
+    background-repeat:no-repeat;
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+
+    h1{
+        color: black;
+        font-size: 220px;
+    }
+}
+
+/* -------------------------- LANDING STYLING ------------------------------ */
+.landingPage{
+    background-image: image-url('Cole_Thomas_TCOE_Arcadian_1836.jpg'); 
+    background-size: cover;
+    background-repeat:no-repeat;
+    font-family: 'Comfortaa', cursive;
 }
 
 /* -------------------------- GREETING STYLING ------------------------------ */

@@ -19,6 +19,7 @@ const App = () => (
         <div className="landingPage" >
             <AuthRoute path="/" exact component={GreetingContainer} />
             <AuthRoute path="/" exact component={Splash} />
+            {/* <AuthRoute path="/" exact component={ break } /> */}
 
             <div className="SessionForms">
                 <AuthRoute path="/login" exact component={ LoginFormContainer } />
