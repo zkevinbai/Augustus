@@ -1,0 +1,1 @@
+json.extract! notebook, :id, :notebook_title, :user_id

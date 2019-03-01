@@ -17,10 +17,8 @@ import InkContainer from './ink/ink_container';
 const App = () => (
     <div className="App" >
         <div className="landingPage" >
-            <AuthRoute path="/" exact component={GreetingContainer} />
-            <AuthRoute path="/" exact component={Splash} />
-            {/* <AuthRoute path="/" exact component={ break } /> */}
-
+            <AuthRoute path="/" component={GreetingContainer} />
+            <AuthRoute path="/" component={Splash} />
             <div className="SessionForms">
                 <AuthRoute path="/login" exact component={ LoginFormContainer } />
                 <AuthRoute path="/signup" exact component={ SignupFormContainer } />
