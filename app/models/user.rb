@@ -15,8 +15,10 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
     validates :username, :email, :password_digest, :session_token, presence: true
     validates :username, :email, :session_token, uniqueness: true
-    validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } # does this work?
+    validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
     validates :password, length: {minimum: 7, allow_nil: true}
+
+    has_many :notebooks
 
     def password=(password)
         @password=password
