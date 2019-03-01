@@ -3,8 +3,14 @@ import { Link } from 'react-router-dom';
 
 const Splash = (props) => {
     return(  
-        <div className="Splash" >                    
+        <div className="Splash" > 
+            <div className="splashQuote" >
+                <h1>Focus on your thoughts, and put them to words. 
+                    Write beautifully with Augustus.</h1>
+            </div>
+                   
             <div className="splashBody">
+
                 <div className="splashFeatures">
                     {/* <div className="featureHead"> */}
                         <h1 className="featureHead">Features</h1>

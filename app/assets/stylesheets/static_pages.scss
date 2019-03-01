@@ -132,6 +132,14 @@ a, button{
     grid-template-rows: 25px 1fr 25px;
 }
 
+.splashQuote{
+    grid-column: 5/8;
+    grid-row: 2/5;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 5vh;
+    color: rgba(255, 255, 255, 0.95);
+}
+
 .splashFeatures{
     grid-column: 2;
     grid-row: 2;
