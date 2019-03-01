@@ -24,7 +24,17 @@
     grid-column: 1;
     grid-row: 1/11;
     display: grid;
-    grid-template-rows: 68px 50px 50px 1fr;
+    grid-template-rows: 68px 50px 50px repeat(7, 25px);
+}
+
+.lbar h1 {
+   border: none;
+   color: white;
+}
+
+.lbar div{
+   border: 2px solid;
+   border-color: white;
 }
 
 .lbar ul{
@@ -43,39 +53,94 @@
 }
 
 .userDropdown{
-    border: 2px solid;
-    border-color: white;
     margin: 1px;
+    z-index: 1;
+    cursor: pointer;
 
-    // text-align: center;
-    // justify-items: center;
-    // justify-content: center;
-
-    display: grid;
-    grid-template-columns: 20% 30% 50%;
-
+    a{
+        display: grid;
+        grid-template-columns: 30% 35% 35%;
+        align-items: center;
+    }
     img{
         grid-column: 1;
         grid-row: 1;
         margin-top: 5px;
+        margin-left: 5px;
         height:50px;
     }
     h1{
         grid-column: 2;
         grid-row: 1;
+        margin-top: 5px;
+        color: rgba(255,255,255,1);
         border: none;
     }
-
-    button{
-        grid-column: 3;
+    i{
+        color: white;
+    }
+    div{
+        grid-column: 2;
         grid-row: 1;
-        border: none;
+        z-index: 2;
+        margin-top: -10px;
+        margin-left: 70px;
+        border-radius: 10px;
+        height: 30px;
+        width: 100px;
+        background: rgba(255,255,255,1);
+
+        button{
+            border-radius: 10px;
+            border: none;
+            height: 100%;
+            width: 100%;
+        }
     }
 }
 
+.searchbar{
+    background: rgb(51, 51, 51);
+    input{
+        border: none;
+        background: none;
+        outline: none;
+        margin: 5px;
+        width: 170px;
+        border-radius: 3px;
+        color: rgb(166, 166, 166);
+        font-size: 23px;
+    }
+    button{
+        background: transparent;
+        color: white;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 15px;
+    }
+    padding: 10px 10px;
+    border-radius: 20px;
+}
+
+.newNote{
+    cursor: pointer;
+    a{
+        display: grid;
+        grid-template-columns: 25% 75%;
+        align-items: center;
+        i{
+            color: white;
+            margin: 5px;
+            margin-left: 10px;
+            font-size: 35px;
+        }
+    }
+}
+
+
 /*----------------------------------- middle nav -----------------------------*/
 .mbar{
-    /* background: lightcoral; */
     background: rgb(248, 248, 248);
     grid-column: 2;
     grid-row: 1/11;
