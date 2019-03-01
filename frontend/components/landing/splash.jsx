@@ -44,8 +44,12 @@ const Splash = (props) => {
             </div>
 
             <div className="splashFooter">
+                <a href="https://www.linkedin.com/in/kevinbai/">
                 <h1>Contact</h1>
+                </a>
+                <a href="https://nature.berkeley.edu/news/2018/01/student-spotlight-kevin-bai">
                 <h1>About</h1>
+                </a>
             </div>
         </div>      
     )
