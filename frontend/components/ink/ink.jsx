@@ -24,7 +24,8 @@ class Ink extends React.Component{
                     <i className="fas fa-angle-down"></i>
                 </a>
                 <div style={hidden} className="dropDiv" >
-                    <button onClick={() => this.props.logout()}>Logout</button>
+                    <button onClick={() => this.props.logout()}>
+                    {`Logout`}</button>
                 </div>
             </div>
 
@@ -44,48 +45,56 @@ class Ink extends React.Component{
                 </a>
             </div>
             
-            <div className="shortcuts" >
+            <div className="shortcuts leftbar-sub" >
                 <a onClick={() => console.log("click")}> 
+                    <i class="fas fa-star"></i>
                     <h1>Shortcuts</h1>
                 </a>
             </div>
 
-            <div className="allNotes" >
+            <div className="allNotes leftbar-sub" >
                 <a onClick={() => console.log("click")}> 
+                    <i className="fas fa-sticky-note"></i>
                     <h1>All Notes</h1>
                 </a>
             </div>
 
-            <div className="Notebooks" >
+            <div className="Notebooks leftbar-sub" >
                 <a onClick={() => console.log("click")}> 
+                    <i class="fas fa-book"></i>
                     <h1>Notebooks</h1>
+                    <i className="fas fa-angle-down"></i>
                 </a>
             </div>
 
-            <div className="sharedWith" >
+            <div className="sharedWith leftbar-sub" >
                 <a onClick={() => console.log("click")}>
+                    <i class="fas fa-share-alt"></i>
                     <h1>Shared with Me</h1>
                 </a>
             </div>
 
-            <div className="Tags" >
+            <div className="Tags leftbar-sub" >
                 <a onClick={() => console.log("click")}>
+                    <i class="fas fa-bookmark"></i>
                     <h1>Tags</h1>
                 </a>
             </div>
 
-            <div className="Trash" >
+            <div className="Trash leftbar-sub" >
                 <a onClick={() => console.log("click")}>
+                    <i class="fas fa-trash"></i>
                     <h1>Trash</h1>
                 </a>
             </div>
 
-            <div className="Premium" >
+            <div className="Premium leftbar-sub" >
                 <a onClick={() => console.log("click")}>
+                    <i class="fas fa-chevron-circle-up"></i>
                     <h1>Premium</h1>
                 </a>
             </div>
-            
+
         </div>
         <div className="mbar bar">
             <h1>All Notes</h1>

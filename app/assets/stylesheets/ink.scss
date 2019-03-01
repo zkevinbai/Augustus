@@ -17,14 +17,13 @@
 
 /*----------------------------------- left nav -------------------------------*/
 .lbar{
-    /* background: lightblue; */
     background: rgb(26, 26, 26);
     border-color: white;
     color: white;
     grid-column: 1;
     grid-row: 1/11;
     display: grid;
-    grid-template-rows: 68px 50px 50px repeat(7, 25px);
+    grid-template-rows: 68px 50px 70px repeat(7, 35px);
 }
 
 .lbar h1 {
@@ -33,8 +32,8 @@
 }
 
 .lbar div{
-   border: 2px solid;
-   border-color: white;
+//    border: 2px solid white;
+//    padding-bottom: 5px;
 }
 
 .lbar ul{
@@ -56,7 +55,6 @@
     margin: 1px;
     z-index: 1;
     cursor: pointer;
-
     a{
         display: grid;
         grid-template-columns: 30% 35% 35%;
@@ -66,7 +64,7 @@
         grid-column: 1;
         grid-row: 1;
         margin-top: 5px;
-        margin-left: 5px;
+        margin-left: 10px;
         height:50px;
     }
     h1{
@@ -89,12 +87,21 @@
         height: 30px;
         width: 100px;
         background: rgba(255,255,255,1);
-
         button{
+            font-size: 15px;
+            font-family: inherit;
             border-radius: 10px;
-            border: none;
             height: 100%;
             width: 100%;
+            cursor: pointer;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    &:hover{
+        i{
+            color: rgb(123, 59, 224);
         }
     }
 }
@@ -120,11 +127,13 @@
         font-size: 15px;
     }
     padding: 10px 10px;
+    padding-top: 13px;
     border-radius: 20px;
 }
 
 .newNote{
     cursor: pointer;
+    margin-bottom: 10px;
     a{
         display: grid;
         grid-template-columns: 25% 75%;
@@ -136,8 +145,50 @@
             font-size: 35px;
         }
     }
+    &:hover{
+        i{
+            color: rgb(123, 59, 224);
+        }
+    }
 }
 
+.leftbar-sub{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    a{
+        display: grid;
+        grid-template-columns: 25% 75%;
+        align-items: center;
+        i{
+            color: white;
+            margin: 5px;
+            margin-left: 10px;
+            font-size: 25px;
+        }
+    }
+    &:hover{
+        i{
+            color: rgb(123, 59, 224);
+        }
+    }
+}
+
+.Notebooks{
+    a {
+        display: grid;
+        grid-template-columns: 25% 40% 35%;
+    }
+}
+
+
+.Premium{
+    &:hover{
+        i{
+            color: rgb(224, 194, 59);
+        }
+    }
+}
 
 /*----------------------------------- middle nav -----------------------------*/
 .mbar{
