@@ -5,13 +5,18 @@
 
     let note1 = {
         notebook_title: "test",
-        user_id: 1
+        user_id: 11
     };
 
+    // let updatenote1 = {
+    //     id: 7, //Change as needed
+    //     notebook_title: "testUpdate",
+    //     user_id: 11
+    // };
+
     let updatenote1 = {
-        id: 4, //Change as needed
+        id: 7, //Change as needed
         notebook_title: "testUpdate",
-        user_id: 1
     };
 
     let notedelete = {
@@ -78,10 +83,11 @@
 
     notebooksIndex()(dispatch);
 
-    notebookShow(1)(dispatch);
+    // notebookShow(1)(dispatch); note necessary
 
     createNotebook(note1)(dispatch);
 
     updateNotebook(updatenote1)(dispatch);
+    // you only need to pass up the thing 
 
-    deleteNotebook(5)(dispatch);
+    deleteNotebook(7)(dispatch);
