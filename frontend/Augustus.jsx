@@ -6,7 +6,8 @@ import Root from './components/root';
 
 import * as SessionApiUtil from './util/session_api_util';
 import * as SessionActions from './actions/session_actions';
-import * as NotebooksApiUtil from './util/notebook_api_util';
+import * as NotebookApiUtil from './util/notebook_api_util';
+import * as NotebookActions from './actions/notebook_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     const rootEl = document.getElementById('root');
@@ -42,11 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // window.login = SessionApiUtil.login;
         // window.logout = SessionApiUtil.logout;
             //* Notebook AJAX ---------------------------------------------------
-        window.notebooksIndex = NotebooksApiUtil.notebooksIndex;
-        window.notebookShow = NotebooksApiUtil.notebookShow;
-        window.createNotebook = NotebooksApiUtil.createNotebook;
-        window.updateNotebook = NotebooksApiUtil.updateNotebook;
-        window.deleteNotebook = NotebooksApiUtil.deleteNotebook;
+        // window.notebooksIndex = NotebookApiUtil.notebooksIndex;
+        // window.notebookShow = NotebookApiUtil.notebookShow;
+        // window.createNotebook = NotebookApiUtil.createNotebook;
+        // window.updateNotebook = NotebookApiUtil.updateNotebook;
+        // window.deleteNotebook = NotebookApiUtil.deleteNotebook;
+        
     // Window Actions ----------------------------------------------------------
             //* Session Actions -------------------------------------------------
         // window.signup = SessionActions.signup;
@@ -54,7 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // window.logout = SessionActions.logout;
         // window.deleteAccount = SessionActions.deleteAccount;
             //* Notebook Actions ------------------------------------------------
-
+        window.notebooksIndex = NotebookActions.notebooksIndex;
+        window.notebookShow = NotebookActions.notebookShow;
+        window.createNotebook = NotebookActions.createNotebook;
+        window.updateNotebook = NotebookActions.updateNotebook;
+        window.deleteNotebook = NotebookActions.deleteNotebook;
     
     // Window Store ------------------------------------------------------------
         window.getState = store.getState;
