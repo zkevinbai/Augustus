@@ -7,6 +7,9 @@
         notebook_title: "test",
         user_id: 11
     };
+    let note1 = {
+        notebook_title: "test",
+    };
 
     // let updatenote1 = {
     //     id: 7, //Change as needed
@@ -15,7 +18,7 @@
     // };
 
     let updatenote1 = {
-        id: 7, //Change as needed
+        id: 900, //Change as needed
         notebook_title: "testUpdate",
     };
 
@@ -90,4 +93,4 @@
     updateNotebook(updatenote1)(dispatch);
     // you only need to pass up the thing 
 
-    deleteNotebook(7)(dispatch);
+    deleteNotebook(100)(dispatch);

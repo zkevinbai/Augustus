@@ -34,8 +34,6 @@ class Api::NotebooksController < ApplicationController
         @notebook = Notebook.find(params[:id])
         if @notebook.destroy
             render json: {}, status: 200
-        else
-            render json: ["notebook not found"], status: 404
         end
     end
 

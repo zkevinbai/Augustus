@@ -22,9 +22,9 @@ export const removeNotebook = (notebookId) => ({
     notebookId
 });
 
-export const receiveNotebookErrors = (notebookErrors) => ({
+export const receiveNotebookErrors = (errors) => ({
     type: RECEIVE_NOTEBOOK_ERRORS,
-    notebookErrors
+    errors
 });
 
 // Thunk Action Creators
