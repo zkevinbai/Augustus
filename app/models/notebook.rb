@@ -11,7 +11,5 @@
 
 class Notebook < ApplicationRecord
     validates :notebook_title, :user_id, presence: true
-    validates :notebook_title, uniqueness: true
-
     belongs_to :user
 end
