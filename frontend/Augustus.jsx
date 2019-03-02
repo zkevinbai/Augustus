@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as SessionApiUtil from './util/session_api_util';
-import * as SessionActions from './actions/session_actions';
+
 import configureStore from './store/store';
 import Root from './components/root';
+
+import * as SessionApiUtil from './util/session_api_util';
+import * as SessionActions from './actions/session_actions';
+import * as NotebooksApiUtil from './util/notebook_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
     const rootEl = document.getElementById('root');
@@ -33,16 +36,25 @@ document.addEventListener('DOMContentLoaded', () => {
         // ---------------------------TESTING START-----------------------------
 
     // Window AJAX -------------------------------------------------------------
+            //* Session AJAX ----------------------------------------------------
         // window.signup = SessionApiUtil.signup;
         // window.deleteAccount = SessionApiUtil.deleteAccount;
         // window.login = SessionApiUtil.login;
         // window.logout = SessionApiUtil.logout;
-
+            //* Notebook AJAX ---------------------------------------------------
+        window.notebooksIndex = NotebooksApiUtil.notebooksIndex;
+        window.notebookShow = NotebooksApiUtil.notebookShow;
+        window.createNotebook = NotebooksApiUtil.createNotebook;
+        window.updateNotebook = NotebooksApiUtil.updateNotebook;
+        window.deleteNotebook = NotebooksApiUtil.deleteNotebook;
     // Window Actions ----------------------------------------------------------
-        window.signup = SessionActions.signup;
-        window.login = SessionActions.login;
-        window.logout = SessionActions.logout;
-        window.deleteAccount = SessionActions.deleteAccount;
+            //* Session Actions -------------------------------------------------
+        // window.signup = SessionActions.signup;
+        // window.login = SessionActions.login;
+        // window.logout = SessionActions.logout;
+        // window.deleteAccount = SessionActions.deleteAccount;
+            //* Notebook Actions ------------------------------------------------
+
     
     // Window Store ------------------------------------------------------------
         window.getState = store.getState;

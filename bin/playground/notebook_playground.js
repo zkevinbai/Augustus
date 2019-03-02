@@ -3,8 +3,14 @@
 
 // Window variables ------------------------------------------------------------
 
-    let notebook = {
+    let note1 = {
         notebook_title: "test",
+        user_id: 1
+    };
+
+    let updatenote1 = {
+        id: 4, //Change as needed
+        notebook_title: "testUpdate",
         user_id: 1
     };
 
@@ -59,13 +65,15 @@
 
 // Window API Testing ----------------------------------------------------------
 
-    // signup(k2).then((res) => console.log(res));
+    notebooksIndex().then((res) => console.log(res));
+    
+    notebookShow(1).then((res) => console.log(res));
 
-    // logout().then((res) => console.log(res));
+    createNotebook(note1).then((res) => console.log(res));
 
-    // login(k2login).then((res) => console.log(res));
+    updateNotebook(updatenote1).then((res) => console.log(res));
 
-    // deleteAccount(k2delete).then((res) => console.log(res));
+    deleteNotebook(4).then((res) => console.log(res));
 
 // Window Actions Testing ------------------------------------------------------
 
