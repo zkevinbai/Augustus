@@ -1,5 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { 
+    Link,
+    NavLink
+} from 'react-router-dom';
+import { ProtectRoute } from '../../util/route_util';
+
 import LNotebooksIndexContainer from './notebooks/L_notebooks_index_container';
 import MRNotebooksIndexContainer from './notebooks/MR_notebooks_container';
 
@@ -28,8 +33,9 @@ class Ink extends React.Component{
 
     notebooks(){
         if( this.props.match.url === "/notebooks"){
-            return (< MRNotebooksIndexContainer />)
+            // return (< MRNotebooksIndexContainer />)
         }
+        return <ProtectRoute path="/notebooks" exact component={MRNotebooksIndexContainer} />
     }
 
     render(){
@@ -83,9 +89,9 @@ class Ink extends React.Component{
             <div className="Notebooks leftbar-sub" >
                 <div>
                     <i className="fas fa-atlas"></i>
-                    <Link to="/notebooks" >
+                    <NavLink to="/notebooks" >
                         <h1>Notebooks</h1>
-                    </Link>
+                    </NavLink>
                     <i className="fas fa-angle-down"
                         onClick={this.hide("notebooks")}
                     ></i>
@@ -146,7 +152,7 @@ class Ink extends React.Component{
             <h1>Tags</h1>
         </div>
     </div>
-        )
+    )
     }
 }
 export default Ink;

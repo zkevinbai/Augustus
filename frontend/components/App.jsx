@@ -1,5 +1,9 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { 
+    Route, 
+    Switch, 
+    Redirect 
+} from 'react-router-dom';
 import {
     AuthRoute,
     ProtectRoute
@@ -16,22 +20,23 @@ import InkContainer from './ink/ink_container';
 
 const App = () => (
     <div className="App" >
-        <div className="landingPage" >
-            <AuthRoute path="/" component={GreetingContainer} />
-            <AuthRoute path="/" component={Splash} />
-            <div className="SessionForms">
-                <AuthRoute path="/login" exact component={ LoginFormContainer } />
-                <AuthRoute path="/signup" exact component={ SignupFormContainer } />
-                <AuthRoute path="/demologin" exact component={ LoginDemoFormContainer } />
-            </div>
-        </div>
 
-        <div className="inkPage" >
-            <ProtectRoute path="/" exact component={InkContainer} />
-            <ProtectRoute path="/notebooks" exact component={InkContainer} />
-            <ProtectRoute path="/notebook/:id" exact component={InkContainer} />
-        </div>
-    </div>
+            <div className="landingPage" >
+                <Route path="/" component={GreetingContainer} />
+                <Route path="/" component={Splash} />
+                <div className="SessionForms">
+                    <AuthRoute path="/login" exact component={ LoginFormContainer } />
+                    <AuthRoute path="/signup" exact component={ SignupFormContainer } />
+                    <AuthRoute path="/demologin" exact component={ LoginDemoFormContainer } />
+                </div>
+            </div>
+
+            <div className="inkPage" >
+                <ProtectRoute path="/notebooks" exact component={InkContainer} />
+                <ProtectRoute path="/notebook/:id" exact component={InkContainer} />
+                <ProtectRoute path="/" component={InkContainer} />
+            </div>
+   </div>
 );
 
 export default App;

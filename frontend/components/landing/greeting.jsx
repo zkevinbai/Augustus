@@ -12,7 +12,6 @@ const Greeting = (props) => {
                 className="navLogout"
                 >Logout
             </button> */}
-
             {/* <button
                 onClick={() => props.deleteAccount(props.user)}
             >Delete Account</button> */}
