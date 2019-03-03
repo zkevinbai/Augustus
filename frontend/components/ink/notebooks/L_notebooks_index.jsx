@@ -6,13 +6,19 @@ class LeftNotebooksIndex extends React.Component{
         super(props);
     }
 
+    componentDidMount() {
+        this.props.fetchNotebooks();
+    }
+
     render(){
+        // debugger
         return(
-            <div>
+            <div className="l-NotebooksIndex" >
                 {this.props.notebooks.map( notebook => {
                     return(
-                    <Link to={"/notebooks"} >
-                        dog
+                    <Link to={`/notebook/${notebook.id}`} >
+                        <i class="fas fa-book"></i>                        
+                        <h2>{notebook.notebook_title}</h2>
                     </Link>
                     )
                 })}

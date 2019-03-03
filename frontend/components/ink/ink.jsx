@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import LNotebooksIndex from './notebooks/L_notebooks_index';
+import LNotebooksIndexContainer from './notebooks/L_notebooks_index_container';
 
 class Ink extends React.Component{
     constructor(props){
@@ -62,10 +62,11 @@ class Ink extends React.Component{
 
             <div className="Notebooks leftbar-sub" >
                 <a onClick={() => console.log("click")}> 
-                    <i className="fas fa-book"></i>
+                    <i className="fas fa-atlas"></i>
                     <h1>Notebooks</h1>
                     <i className="fas fa-angle-down"></i>
                 </a>
+                    <LNotebooksIndexContainer />
                 <div >
                     {/* <p>test</p>
                     <p>test</p>
