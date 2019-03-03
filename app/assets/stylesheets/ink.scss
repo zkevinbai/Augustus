@@ -170,6 +170,7 @@
         }
     }
 }
+
 .leftbar-sub:hover{
     i{
         color: rgb(123, 59, 224);
@@ -182,6 +183,10 @@
         display: grid;
         grid-template-columns: 25% 40% 35%;
     }
+
+    h1:hover{
+        color: rgb(123, 59, 224);
+    }
 }
 
 .l-NotebooksIndex:hover{
@@ -189,6 +194,7 @@
         color: rgb(165, 126, 226);
     }
 }
+
 .l-NotebooksIndex{
     a{
         background: rgba(255, 255, 255, 0.1);
@@ -259,7 +265,7 @@
     grid-row: 1/11;
     display: grid;
     grid-template-rows: 60px 1fr 50px;
-    /* background-image: url("./Cole_Thomas_The_Consummation_The_Course_of_the_Empire_1836.jpg"); */
+    // background-image: url("./Cole_Thomas_The_Consummation_The_Course_of_the_Empire_1836.jpg");
 }
 
 /*----------------------------------- othe -----------------------------------*/

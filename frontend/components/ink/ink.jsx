@@ -32,8 +32,6 @@ class Ink extends React.Component{
         }
     }
 
-
-
     render(){
         // debugger
     return (
@@ -76,10 +74,10 @@ class Ink extends React.Component{
             </div>
 
             <div className="allNotes leftbar-sub" >
-                <a onClick={() => console.log("click")}> 
+                <Link to="/" >
                     <i className="fas fa-sticky-note"></i>
                     <h1>All Notes</h1>
-                </a>
+                </Link>
             </div>
 
             <div className="Notebooks leftbar-sub" >
