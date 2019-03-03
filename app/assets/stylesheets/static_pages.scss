@@ -82,6 +82,11 @@ a, button{
     justify-content: center;
     font-size: 25px;    
     font-family: 'Noticia Text', serif;
+
+    &:hover{
+        background: rgba(255, 255, 255, 0.75);
+        color: rgba(98, 12, 232, 1);
+    }
 }
 
 .navLogo{
@@ -231,7 +236,7 @@ a, button{
     h1{
         padding: 10px;
         margin: 10px;
-        color: rgba(255, 255, 255, 0.5);
+        color: rgba(255, 255, 255, 0.75);
         text-align: center;
         font-size: 25px;
     }
