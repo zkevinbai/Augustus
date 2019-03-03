@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LNotebooksIndex from './notebooks/L_notebooks_index';
 
 class Ink extends React.Component{
     constructor(props){
