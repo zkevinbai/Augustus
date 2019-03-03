@@ -22,7 +22,6 @@ import NotFound from './not_found';
 
 const App = () => (
     <div className="App" >
-
             <div className="landingPage" >
                 <AuthRoute path="/" component={GreetingContainer} />
                 <AuthRoute path="/" component={Splash} />
@@ -34,9 +33,7 @@ const App = () => (
             </div>
 
             <div className="inkPage" >
-                <ProtectRoute path="/notebooks" exact component={InkContainer} />
-                <ProtectRoute path="/notebook/:id" exact component={InkContainer} />
-                <ProtectRoute path="/" exact component={InkContainer} />
+                <ProtectRoute path="/" component={InkContainer} />
             </div>
    </div>
 );

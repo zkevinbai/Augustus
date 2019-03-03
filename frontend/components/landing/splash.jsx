@@ -1,7 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+const nonSplash = ["/login", "/signup", "/demologin"];
 
 const Splash = (props) => {
+    if (nonSplash.includes(props.history.location.pathname)) {
+        return (
+            <div>
+            </div>
+        )
+    } else {
     return(  
         <div className="Splash" > 
             <div className="splashQuote" >
@@ -53,6 +60,7 @@ const Splash = (props) => {
             </div>
         </div>      
     )
+    }
 };
 
 export default Splash;

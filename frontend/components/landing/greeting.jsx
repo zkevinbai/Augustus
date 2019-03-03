@@ -1,9 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Greeting = (props) => {
+const nonSplash = ["/login", "/signup","/demologin"];
 
-    if (props.user){
+const Greeting = (props) => {
+    if (nonSplash.includes(props.history.location.pathname)){
+        return (
+            <div>
+            </div>
+        )
+    }
+    else if (props.user){
         return (
         <div className="Greeting" >
             {/* <h2>{`hi ${props.user.username}`}</h2> */}
