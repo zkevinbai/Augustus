@@ -9,7 +9,7 @@
     grid-template-rows: repeat(10, 1fr);
     max-height: 100vh;
     min-height: 100vh;
-    h1, h2, p, ul, li {
+    h1, p, ul, li {
         border: 2px solid;
         margin: 1px;
     }
@@ -169,10 +169,10 @@
             font-size: 25px;
         }
     }
-    &:hover{
-        i{
-            color: rgb(123, 59, 224);
-        }
+}
+.leftbar-sub:hover{
+    i{
+        color: rgb(123, 59, 224);
     }
 }
 
@@ -181,6 +181,29 @@
     a {
         display: grid;
         grid-template-columns: 25% 40% 35%;
+    }
+}
+
+.l-NotebooksIndex:hover{
+    i{
+        color: rgb(165, 126, 226);
+    }
+}
+.l-NotebooksIndex{
+    a{
+        background: rgba(255, 255, 255, 0.1);
+        h2{
+            color: rgb(150, 148, 148);
+        }
+    }
+    a:hover{
+        i{
+            color: rgb(133, 66, 240);
+        }
+
+        h2{
+            color: rgba(255, 255, 255, 1);
+        }
     }
 }
 

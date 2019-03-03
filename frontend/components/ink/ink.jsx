@@ -5,26 +5,43 @@ import LNotebooksIndexContainer from './notebooks/L_notebooks_index_container';
 class Ink extends React.Component{
     constructor(props){
         super(props);
-        this.state = {hidden: true};
+        // this.state = {hidden: true};
+        // this.hide = this.hide.bind(this);
+
+        this.state = {
+            logout: true,
+            notebooks: true,
+        };
         this.hide = this.hide.bind(this);
+        this.hidden = this.hidden.bind(this);
     }
 
-    hide(e) {
-        this.setState({hidden: !this.state.hidden});
+    // hide(e) {
+    //     this.setState({hidden: !this.state.hidden});
+    // }
+
+    hide(field) {
+        return (e) => {
+            this.setState({ [field]: !this.state[field]});
+        };
+    }
+
+    hidden(field){
+        return this.state[field] ? { display: "none" } : { display: "block" };
     }
 
     render(){
-        const hidden = this.state.hidden ? {display: "none"} : {display: "block"};
-        return (
+    return (
     <div className="bars">
         <div className="lbar bar">
             <div className="userDropdown" >
-                <a onClick={this.hide}>                            
+                <a onClick={this.hide("logout")}>                            
                     <img src={window.logoURL} />
                     <h1>{this.props.user.username}</h1>
                     <i className="fas fa-angle-down"></i>
                 </a>
-                <div style={hidden} className="dropDiv" >
+
+                <div style={this.hidden("logout")} className="dropDiv" >
                     <button onClick={() => this.props.logout()}>
                     {`Logout`}</button>
                 </div>
@@ -61,39 +78,14 @@ class Ink extends React.Component{
             </div>
 
             <div className="Notebooks leftbar-sub" >
-                <a onClick={() => console.log("click")}> 
+                <a> 
                     <i className="fas fa-atlas"></i>
                     <h1>Notebooks</h1>
-                    <i className="fas fa-angle-down"></i>
+                    <i className="fas fa-angle-down"
+                        onClick={this.hide("notebooks")}
+                    ></i>
                 </a>
-                    <LNotebooksIndexContainer />
-                <div >
-                    {/* <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p> */}
-                </div>
+                <LNotebooksIndexContainer style={this.hidden("notebooks")} />
             </div>
 
             <div className="sharedWith leftbar-sub" >

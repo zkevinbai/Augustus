@@ -13,11 +13,11 @@ class LeftNotebooksIndex extends React.Component{
     render(){
         // debugger
         return(
-            <div className="l-NotebooksIndex" >
+            <div className={`l-NotebooksIndex`} style={this.props.style} >
                 {this.props.notebooks.map( notebook => {
                     return(
-                    <Link to={`/notebook/${notebook.id}`} >
-                        <i class="fas fa-book"></i>                        
+                    <Link to={`/notebook/${notebook.id}`} key={notebook.id} >
+                        <i className="fas fa-book"></i>                        
                         <h2>{notebook.notebook_title}</h2>
                     </Link>
                     )
