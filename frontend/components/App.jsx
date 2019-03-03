@@ -18,12 +18,14 @@ import LoginDemoFormContainer from './session/login_demo_form_container';
 
 import InkContainer from './ink/ink_container';
 
+import NotFound from './not_found';
+
 const App = () => (
     <div className="App" >
 
             <div className="landingPage" >
-                <Route path="/" component={GreetingContainer} />
-                <Route path="/" component={Splash} />
+                <AuthRoute path="/" component={GreetingContainer} />
+                <AuthRoute path="/" component={Splash} />
                 <div className="SessionForms">
                     <AuthRoute path="/login" exact component={ LoginFormContainer } />
                     <AuthRoute path="/signup" exact component={ SignupFormContainer } />
@@ -34,7 +36,7 @@ const App = () => (
             <div className="inkPage" >
                 <ProtectRoute path="/notebooks" exact component={InkContainer} />
                 <ProtectRoute path="/notebook/:id" exact component={InkContainer} />
-                <ProtectRoute path="/" component={InkContainer} />
+                <ProtectRoute path="/" exact component={InkContainer} />
             </div>
    </div>
 );
