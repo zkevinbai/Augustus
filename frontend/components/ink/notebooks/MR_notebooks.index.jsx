@@ -6,10 +6,6 @@ class LeftNotebooksIndex extends React.Component {
         super(props);
     }
 
-    // componentDidMount() {
-    //     this.props.fetchNotebooks();
-    // }
-
     render() {
         return (
             <div className={`mr-NotebooksIndex`}>

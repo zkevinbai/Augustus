@@ -32,8 +32,10 @@ class Ink extends React.Component{
         }
     }
 
+
+
     render(){
-        debugger
+        // debugger
     return (
     <div className="bars">
         <div className="lbar bar">
@@ -81,13 +83,15 @@ class Ink extends React.Component{
             </div>
 
             <div className="Notebooks leftbar-sub" >
-                <a> 
+                <div>
                     <i className="fas fa-atlas"></i>
-                    <h1>Notebooks</h1>
+                    <Link to="/notebooks" >
+                        <h1>Notebooks</h1>
+                    </Link>
                     <i className="fas fa-angle-down"
                         onClick={this.hide("notebooks")}
                     ></i>
-                </a>
+                </div>
                 <LNotebooksIndexContainer style={this.hidden("notebooks")} />
             </div>
 

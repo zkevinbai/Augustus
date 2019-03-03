@@ -158,7 +158,7 @@
     margin-left: 10px;
     margin-bottom: 10px;
     cursor: pointer;
-    a{
+    a, div{
         display: grid;
         grid-template-columns: 25% 75%;
         align-items: center;
@@ -178,7 +178,7 @@
 
 .Notebooks{
     grid-row: 6;
-    a {
+    a, div {
         display: grid;
         grid-template-columns: 25% 40% 35%;
     }
