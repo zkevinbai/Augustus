@@ -1,24 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LNotebooksIndexContainer from './notebooks/L_notebooks_index_container';
+import MRNotebooksIndexContainer from './notebooks/MR_notebooks_container';
 
 class Ink extends React.Component{
     constructor(props){
         super(props);
-        // this.state = {hidden: true};
-        // this.hide = this.hide.bind(this);
-
         this.state = {
             logout: true,
             notebooks: true,
         };
         this.hide = this.hide.bind(this);
         this.hidden = this.hidden.bind(this);
-    }
 
-    // hide(e) {
-    //     this.setState({hidden: !this.state.hidden});
-    // }
+        this.notebooks = this.notebooks.bind(this);
+    }
 
     hide(field) {
         return (e) => {
@@ -30,7 +26,14 @@ class Ink extends React.Component{
         return this.state[field] ? { display: "none" } : { display: "block" };
     }
 
+    notebooks(){
+        if( this.props.match.url === "/notebooks"){
+            return (< MRNotebooksIndexContainer />)
+        }
+    }
+
     render(){
+        debugger
     return (
     <div className="bars">
         <div className="lbar bar">
@@ -115,8 +118,10 @@ class Ink extends React.Component{
                     <h1>Premium</h1>
                 </a>
             </div>
-
         </div>
+    
+        {this.notebooks()}
+
         <div className="mbar bar">
             <h1>All Notes</h1>
             <ul>

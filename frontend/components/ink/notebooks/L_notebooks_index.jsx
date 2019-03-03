@@ -11,7 +11,6 @@ class LeftNotebooksIndex extends React.Component{
     }
 
     render(){
-        // debugger
         return(
             <div className={`l-NotebooksIndex`} style={this.props.style} >
                 {this.props.notebooks.map( notebook => {

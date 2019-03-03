@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import LNotebooksIndex from './L_notebooks_index';
+import MRNotebooksIndex from './MR_notebooks.index';
 import {
     notebooksIndex
 } from '../../../actions/notebook_actions';
 
 const mapStateToProps = (storeState, ownProps) => {
     let notebooks = [];
-    if (storeState.entities.notebooks){
+    if (storeState.entities.notebooks) {
         notebooks = Object.values(storeState.entities.notebooks);
     }
     return {
@@ -19,6 +19,6 @@ const mapDispatchToProps = (dispatch) => ({
     fetchNotebooks: () => dispatch(notebooksIndex())
 });
 
-const LNotebooksIndexContainer = connect(mapStateToProps, mapDispatchToProps)(LNotebooksIndex);
+const MRNotebooksIndexContainer = connect(mapStateToProps, mapDispatchToProps)(MRNotebooksIndex);
 
-export default LNotebooksIndexContainer;
+export default MRNotebooksIndexContainer;

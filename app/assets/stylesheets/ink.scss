@@ -198,7 +198,7 @@
     }
     a:hover{
         i{
-            color: rgb(133, 66, 240);
+            color: rgb(145, 81, 248);
         }
 
         h2{
@@ -213,6 +213,16 @@
             color: rgb(224, 194, 59);
         }
     }
+}
+
+/*---------------------------- MR notebooks index ----------------------------*/
+
+.mr-NotebooksIndex{
+    background: lightblue;
+    height: 100%;
+    grid-column: 2/4;
+    grid-row: 1/11;
+    z-index: 1;
 }
 
 /*----------------------------------- middle nav -----------------------------*/

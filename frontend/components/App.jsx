@@ -28,6 +28,7 @@ const App = () => (
 
         <div className="inkPage" >
             <ProtectRoute path="/" exact component={InkContainer} />
+            <ProtectRoute path="/notebooks" exact component={InkContainer} />
             <ProtectRoute path="/notebook/:id" exact component={InkContainer} />
         </div>
     </div>
