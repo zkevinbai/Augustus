@@ -5,15 +5,21 @@ import {
 } from "../../actions/notebook_actions";
 import { merge } from 'lodash';
 
-let newState = { };
 const notebookReducer = (oldState = { }, action) => {
     Object.freeze(oldState);
+    let newState = {};
 
     switch (action.type) {
         case RECEIVE_NOTEBOOKS:
-            action.notebooks.map( notebook => (
+            let values = Object.values(action.notebooks);
+
+            values.map( notebook => (
                 newState[notebook.id] = notebook
             ) );
+
+            // action.notebooks.map( notebook => (
+            //     newState[notebook.id] = notebook
+            // ) );
             return newState;
 
         case RECEIVE_NOTEBOOK:
