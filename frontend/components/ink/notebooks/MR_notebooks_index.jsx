@@ -4,10 +4,15 @@ import { Link } from 'react-router-dom';
 class LeftNotebooksIndex extends React.Component {
     constructor(props) {
         super(props);
+        this.createNotebookModal = this.createNotebookModal.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchNotebooks();
+    }
+
+    createNotebookModal(){
+        this.props.history.push('/notebook/new');
     }
 
     render() {
@@ -15,7 +20,9 @@ class LeftNotebooksIndex extends React.Component {
             <div className={`mr-NotebooksIndex`}>
                 <div className={`mr-NotebooksIndex-heading`}>
                     <h1>Notebooks</h1>
-                    <span className="newNotebook">
+                    <span className="newNotebook"
+                        onClick={this.createNotebookModal}
+                    >
                         <i className="fas fa-book-medical"></i>
                         <h1>New</h1>
                     </span>
