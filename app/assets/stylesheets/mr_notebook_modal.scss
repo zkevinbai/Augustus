@@ -40,6 +40,14 @@
         }
     }
 }
+    .notebookErrors{
+        p{
+            border: none;
+            padding: 1px;
+            margin: 1px;
+            color: rgb(232, 44, 12);
+        }
+    }
 
     .notebookFormHeader{
         grid-row: 1;
