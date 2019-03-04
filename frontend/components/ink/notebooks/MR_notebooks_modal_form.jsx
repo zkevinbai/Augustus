@@ -5,10 +5,6 @@ class NotebookForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = props.notebook;
-        // this.state = {
-        //     notebook_title: "",
-        //     user_id: 11
-        // };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -41,8 +37,13 @@ class NotebookForm extends React.Component {
 
     render() {
         return (
-            <div className="notebookForm modal">
-                <form onSubmit={this.handleSubmit} >
+            <div className="modal">
+                <form className="notebookForm" onSubmit={this.handleSubmit} >
+                    <div className="sessionErrors">
+                        {this.props.errors.map(error =>
+                            <p key={error.length} >{error}</p>
+                        )}
+                    </div>
                     <input
                         autoFocus
                         type="text"
@@ -50,7 +51,6 @@ class NotebookForm extends React.Component {
                         value={this.state.notebook_title}
                         onChange={this.handleChange("notebook_title")}
                     />
-                    <br />
                     <input className="continue" type="submit" value="Continue" />
                 </form>
             </div>
