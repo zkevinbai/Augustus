@@ -27,10 +27,10 @@ class NotebookForm extends React.Component {
     }
 
     handleSubmit(event) {
+        event.preventDefault();
         if (this.props.errors.length !== 0) {
             this.props.clearErrors();
         }
-        event.preventDefault();
         this.props.formAction(this.state);
         this.props.history.push('/notebooks');
     }
@@ -39,10 +39,15 @@ class NotebookForm extends React.Component {
         return (
             <div className="modal">
                 <form className="notebookForm" onSubmit={this.handleSubmit} >
-                    <div className="sessionErrors">
-                        {this.props.errors.map(error =>
-                            <p key={error.length} >{error}</p>
-                        )}
+                    <div className="notebookFormHeader" >
+                        <div className="notebookErrors">
+                            {this.props.errors.map(error =>
+                                <p key={error.length} >{error}</p>
+                            )}
+                        </div>
+                        <i class="fas fa-times"
+                            onClick={() => this.props.history.push('/notebooks')}
+                        ></i>
                     </div>
                     <input
                         autoFocus

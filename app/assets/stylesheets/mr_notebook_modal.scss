@@ -23,6 +23,7 @@
     display: grid;
     grid-template-rows: repeat(3, 50px);
     align-items: center;
+
     input{
         font-size: 30px;
         border: none;
@@ -31,13 +32,7 @@
         border-radius: 10px;
     }
 
-    :nth-child(1){
-        grid-row: 1;
-    }   
-    :nth-child(2){
-        grid-row: 2;
-    }
-    :nth-child(3){
+    .continue{
         grid-row: 3;
             background: rgba(26,26,26,1);
         &:hover{
@@ -45,3 +40,18 @@
         }
     }
 }
+
+    .notebookFormHeader{
+        grid-row: 1;
+        display: grid;
+        grid-template-columns: 9fr 1fr;
+        grid-template-rows: 1fr 9fr;
+        align-self: start;
+
+        i{
+            grid-row: 1;
+            grid-column: 2;
+            cursor: pointer;
+            justify-self: center;
+        }
+    }
