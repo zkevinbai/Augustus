@@ -1,5 +1,13 @@
 /* ----------------------------- ASSETS ------------------------------------- */
 
+/* Grid Testing
+h1, h2, h3, p, ul, li, div, span, a {
+	border: 2px solid;
+	margin: 1px;
+}
+*/
+
+
 /* Images
 background-image: Cole_Thomas_TCOE_Savage_1836.jpg;
 background-image: Cole_Thomas_TCOE_Arcadian_1836.jpg;
@@ -8,14 +16,14 @@ background-image: Cole_Thomas_TCOE_Destruction_1836.jpg;
 */
 
 /* Fonts
-font-family: 'Open Sans', sans-serif;
+font-family: 'Open Sans', sans-serif; Subheading Font
 font-family: 'Roboto', sans-serif;
 font-family: 'Noto Serif', serif;
 font-family: 'Abril Fatface', cursive;
 font-family: 'Righteous', cursive;
 font-family: 'Cinzel', serif;
-font-family: 'Libre Baskerville', serif;
-font-family: 'Comfortaa', cursive;
+font-family: 'Libre Baskerville', serif; Logo Font
+font-family: 'Comfortaa', cursive; Workhorse Font
 font-family: 'Noticia Text', serif;
  */
 
