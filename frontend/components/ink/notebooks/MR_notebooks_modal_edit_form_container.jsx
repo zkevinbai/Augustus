@@ -7,11 +7,10 @@ import {
 } from '../../../actions/notebook_actions';
 
 const mapStateToProps = (storeState, ownProps) => {
-    debugger
     let notebook = {};
-    // if (storeState.entities.notebooks){
-    //     storeState.entities.notebooks[ownProps.match.params.id];
-    // }
+    if (storeState.entities.notebooks){
+        notebook = storeState.entities.notebooks[ownProps.match.params.id];
+    }
     let errors = storeState.errors.notebooks;
     return {
         notebook,
