@@ -93,4 +93,4 @@
     updateNotebook(updatenote1)(dispatch);
     // you only need to pass up the thing 
 
-    deleteNotebook(100)(dispatch);
+    deleteNotebook(21)(dispatch);

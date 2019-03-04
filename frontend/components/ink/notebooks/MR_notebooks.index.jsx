@@ -6,7 +6,12 @@ class LeftNotebooksIndex extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        this.props.fetchNotebooks();
+    }
+
     render() {
+        // debugger
         return (
             <div className={`mr-NotebooksIndex`}>
                 <div className={`mr-NotebooksIndex-heading`}>
@@ -23,14 +28,19 @@ class LeftNotebooksIndex extends React.Component {
                 </div>
                 <div className={`mr-NotebooksIndex-notebooks`}>
                     {this.props.notebooks.map(notebook => (
-                        <span>
-                            <Link to={`/notebook/${notebook.id}`} key={notebook.id} >
+                        <span key={notebook.id}>
+                            <Link to={`/notebook/${notebook.id}`}>
                                 <i className="fas fa-book"></i>
                                 <h2>{notebook.notebook_title}</h2>
                             </Link>
                             <i className="fas fa-edit notebookEdit"
                             ></i>
                             <i className="fas fa-book-dead notebookDelete"
+                                onClick={ () => {
+                                    this.props.deleteNotebook(notebook.id)
+                                    this.setState({key: "value"})
+                                    this.forceUpdate();
+                                } }
                             ></i>
                         </span>
                     )
