@@ -36,6 +36,7 @@ class NotebookForm extends React.Component {
         }
         event.preventDefault();
         this.props.formAction(this.state);
+        this.props.history.push('/notebooks');
     }
 
     render() {
