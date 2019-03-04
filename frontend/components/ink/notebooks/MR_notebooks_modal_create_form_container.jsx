@@ -7,7 +7,7 @@ import {
 
 const mapStateToProps = (storeState, ownProps) => {
     let notebook = {
-        notebook_title: "TEST",
+        notebook_title: "",
         user_id: storeState.session.id
     };
     let errors = storeState.errors.notebooks;
