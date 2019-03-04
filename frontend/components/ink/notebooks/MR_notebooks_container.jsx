@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import MRNotebooksIndex from './MR_notebooks.index';
+import MRNotebooksIndex from './MR_notebooks_index';
 import {
     notebooksIndex,
     deleteNotebook
