@@ -14,6 +14,10 @@ class NotebookForm extends React.Component {
         }
     }
 
+    componentWillUnmount(){
+        this.props.clearErrors();
+    }
+
     hitSubmit() {
         this.props.formAction(this.state);
         clearInterval(this.submitId);
@@ -26,6 +30,7 @@ class NotebookForm extends React.Component {
             })
         );
     }
+    
 
     handleSubmit(event) {
         event.preventDefault();
