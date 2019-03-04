@@ -11,7 +11,9 @@ const notebookReducer = (oldState = { }, action) => {
 
     switch (action.type) {
         case RECEIVE_NOTEBOOKS:
-            newState = merge({}, oldState, action.notebooks);
+            action.notebooks.map( notebook => (
+                newState[notebook.id] = notebook
+            ) );
             return newState;
 
         case RECEIVE_NOTEBOOK:

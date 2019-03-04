@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import MRNotebooksEditModalContainer from './MR_notebooks_modal_edit_form_container';
+
 class LeftNotebooksIndex extends React.Component {
     constructor(props) {
         super(props);
         this.createNotebookModal = this.createNotebookModal.bind(this);
+        this.editNotebookModal = this.editNotebookModal.bind(this);
     }
 
     componentDidMount() {
@@ -13,6 +16,10 @@ class LeftNotebooksIndex extends React.Component {
 
     createNotebookModal(){
         this.props.history.push('/notebooks/new');
+    }
+
+    editNotebookModal(id){
+        this.props.history.push(`/notebooks/edit/${id}`);
     }
 
     render() {
@@ -40,6 +47,7 @@ class LeftNotebooksIndex extends React.Component {
                                 <h2>{notebook.notebook_title}</h2>
                             </Link>
                             <i className="fas fa-edit notebookEdit"
+                                onClick={() => this.editNotebookModal(notebook.id)}
                             ></i>
                             <i className="fas fa-book-dead notebookDelete"
                                 onClick={ () => {

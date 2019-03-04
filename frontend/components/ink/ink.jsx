@@ -8,6 +8,7 @@ import { ProtectRoute } from '../../util/route_util';
 import LNotebooksIndexContainer from './notebooks/L_notebooks_index_container';
 import MRNotebooksIndexContainer from './notebooks/MR_notebooks_container';
 import MRNotebooksCreateModalContainer from './notebooks/MR_notebooks_modal_create_form_container';
+import MRNotebooksEditModalContainer from './notebooks/MR_notebooks_modal_edit_form_container';
 
 class Ink extends React.Component{
     constructor(props){
@@ -20,7 +21,8 @@ class Ink extends React.Component{
         this.hidden = this.hidden.bind(this);
 
         this.notebooks = this.notebooks.bind(this);
-        this.notebookModal = this.notebookModal.bind(this);
+        this.notebookCreateModal = this.notebookCreateModal.bind(this);
+        this.notebookEditModal = this.notebookEditModal.bind(this);
     }
 
     hide(field) {
@@ -37,8 +39,12 @@ class Ink extends React.Component{
         return <ProtectRoute path="/notebooks" component={MRNotebooksIndexContainer} />
     }
 
-    notebookModal(){
+    notebookCreateModal(){
         return <ProtectRoute path="/notebooks/new" exact component={MRNotebooksCreateModalContainer} />
+    }
+
+    notebookEditModal(){
+        return <ProtectRoute path="/notebooks/edit/:id" exact component={MRNotebooksEditModalContainer} />
     }
 
     render(){
@@ -132,7 +138,8 @@ class Ink extends React.Component{
         </div>
     
         {this.notebooks()}
-        {this.notebookModal()}
+        {this.notebookCreateModal()}
+        {this.notebookEditModal()}
 
         <div className="mbar bar">
             <h1>All Notes</h1>

@@ -10,6 +10,7 @@ class NotebookForm extends React.Component {
 
     componentDidMount() {
         if(this.props.fetchNotebook){
+            this.props.fetchNotebook(this.props.match.params.id);
         }
     }
 
@@ -45,7 +46,7 @@ class NotebookForm extends React.Component {
                                 <p key={error.length} >{error}</p>
                             )}
                         </div>
-                        <i class="fas fa-times"
+                        <i className="fas fa-times"
                             onClick={() => this.props.history.push('/notebooks')}
                         ></i>
                     </div>
