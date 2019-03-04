@@ -12,7 +12,7 @@ class LeftNotebooksIndex extends React.Component {
     }
 
     createNotebookModal(){
-        this.props.history.push('/notebook/new');
+        this.props.history.push('/notebooks/new');
     }
 
     render() {

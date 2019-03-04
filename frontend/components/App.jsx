@@ -18,8 +18,6 @@ import LoginDemoFormContainer from './session/login_demo_form_container';
 
 import InkContainer from './ink/ink_container';
 
-import NotFound from './not_found';
-
 const App = () => (
     <div className="App" >
             <div className="landingPage" >

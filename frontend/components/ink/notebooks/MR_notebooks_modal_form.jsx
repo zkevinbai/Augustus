@@ -4,26 +4,22 @@ import { Link } from 'react-router-dom';
 class NotebookForm extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = props.notebook;
-        this.state = {
-            notebook_title: "",
-            user_id: 11
-        };
+        this.state = props.notebook;
+        // this.state = {
+        //     notebook_title: "",
+        //     user_id: 11
+        // };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
+        if(this.props.fetchNotebook){
+        }
     }
 
     hitSubmit() {
         this.props.formAction(this.state);
         clearInterval(this.submitId);
-    }
-
-    componentDidUpdate() {
-    }
-
-    componentWillUnmount() {
     }
 
     handleChange(field) {
