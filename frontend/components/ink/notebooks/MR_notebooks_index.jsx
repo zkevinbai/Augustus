@@ -11,7 +11,6 @@ class LeftNotebooksIndex extends React.Component {
     }
 
     render() {
-        // debugger
         return (
             <div className={`mr-NotebooksIndex`}>
                 <div className={`mr-NotebooksIndex-heading`}>
