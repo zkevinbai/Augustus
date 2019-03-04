@@ -63,8 +63,7 @@
     }
 
     display: grid;
-    // grid-template-columns: repeat(10, 1fr);
-            grid-template-columns: repeat(7, 1fr) 100px 100px 150px;
+    grid-template-columns: repeat(7, 1fr) 100px 100px 150px;
 
     :nth-child(2){
         grid-column: 8;
@@ -110,16 +109,24 @@
             h1{
                 font-size: 25px;
             }
+            
+            &:hover{
+                color: rgb(123, 59, 224);
+            }
         }
 
         i{
             cursor: pointer;
             font-size: 25px;
+            &:hover{
+                color: rgb(123, 59, 224);
+            }
         }
 
         .notebookEdit{
             grid-column: 8;
             justify-self: center;
+        
         }
         .notebookDelete{
             grid-column: 10;
