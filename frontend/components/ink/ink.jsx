@@ -9,6 +9,7 @@ import LNotebooksIndexContainer from './notebooks/L_notebooks_index_container';
 import MRNotebooksIndexContainer from './notebooks/MR_notebooks_container';
 import MRNotebooksCreateModalContainer from './notebooks/MR_notebooks_modal_create_form_container';
 import MRNotebooksEditModalContainer from './notebooks/MR_notebooks_modal_edit_form_container';
+import PremiumFeatures from './premium_features';
 
 class Ink extends React.Component{
     constructor(props){
@@ -23,6 +24,7 @@ class Ink extends React.Component{
         this.notebooks = this.notebooks.bind(this);
         this.notebookCreateModal = this.notebookCreateModal.bind(this);
         this.notebookEditModal = this.notebookEditModal.bind(this);
+        this.premiumFeatures = this.premiumFeatures.bind(this);
     }
 
     hide(field) {
@@ -45,6 +47,10 @@ class Ink extends React.Component{
 
     notebookEditModal(){
         return <ProtectRoute path="/notebooks/edit/:id" exact component={MRNotebooksEditModalContainer} />
+    }
+
+    premiumFeatures(){
+        return <ProtectRoute path="/:params*/premium" exact component={PremiumFeatures} />
     }
 
     render(){
@@ -140,6 +146,8 @@ class Ink extends React.Component{
         {this.notebooks()}
         {this.notebookCreateModal()}
         {this.notebookEditModal()}
+
+        {this.premiumFeatures()}
 
         <div className="mbar bar">
             <h1>All Notes</h1>

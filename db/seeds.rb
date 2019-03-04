@@ -6,8 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(
-    username: "Octavian",
-    email: "otto@julia.com",
-    password: "password",
-)
+ActiveRecord::Base.transaction do 
+
+    # reset all databases
+    User.destroy_all
+    Notebook.destroy_all
+
+
+    #create all info
+    demo_user = User.create(
+        username: "Octavian",
+        email: "otto@julia.com",
+        password: "password",
+    )
+
+    demo_his = Notebook.create(
+        user_id: demo_user.id, 
+        notebook_title: "history"
+    )
+end

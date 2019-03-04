@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import MRNotebooksEditModalContainer from './MR_notebooks_modal_edit_form_container';
-
 class LeftNotebooksIndex extends React.Component {
     constructor(props) {
         super(props);
