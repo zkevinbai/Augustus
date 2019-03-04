@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import MRNotebooksModalForm from './MR_notebooks_modal_form';
 import {
     updateNotebook,
-    notebookShow
+    notebookShow,
+    clearNotebookErrors
 } from '../../../actions/notebook_actions';
 
 const mapStateToProps = (storeState, ownProps) => {
@@ -20,6 +21,7 @@ const mapStateToProps = (storeState, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => ({
     fetchNotebook: (id) => dispatch(notebookShow(id)),
+    clearErrors: () => dispatch(clearNotebookErrors()),
     formAction: (notebook) => dispatch(updateNotebook(notebook))
 });
 

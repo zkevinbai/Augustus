@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import MRNotebooksModalForm from './MR_notebooks_modal_form';
 import {
-    createNotebook
+    createNotebook,
+    clearNotebookErrors
 } from '../../../actions/notebook_actions';
 
 const mapStateToProps = (storeState, ownProps) => {
@@ -18,6 +19,7 @@ const mapStateToProps = (storeState, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
+    clearErrors: () => dispatch(clearNotebookErrors()),
     formAction: (notebook) => dispatch(createNotebook(notebook))
 });
 

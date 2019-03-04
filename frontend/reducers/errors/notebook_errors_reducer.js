@@ -1,7 +1,8 @@
 import {
     RECEIVE_NOTEBOOKS,
     RECEIVE_NOTEBOOK,
-    RECEIVE_NOTEBOOK_ERRORS
+    RECEIVE_NOTEBOOK_ERRORS,
+    CLEAR_NOTEBOOK_ERRORS
 } from '../../actions/notebook_actions';
 import { merge } from 'lodash';
 
@@ -19,6 +20,10 @@ const notebookErrorsReducer = (oldState = [], action) => {
             return newState;
 
         case RECEIVE_NOTEBOOK:
+            newState = [];
+            return newState;
+
+        case CLEAR_NOTEBOOK_ERRORS:
             newState = [];
             return newState;
 
