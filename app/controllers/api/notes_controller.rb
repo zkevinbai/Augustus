@@ -2,7 +2,7 @@ class Api::NotesController < ApplicationController
 
     def index
         @notes = current_user.notes
-        
+
         render :index
     end
 
@@ -14,6 +14,8 @@ class Api::NotesController < ApplicationController
 
     def create
         @note = Note.new(note_params)
+
+        @note.note_title ="Untitled" unless @note.note_title
 
         if @note.save
             render :show
