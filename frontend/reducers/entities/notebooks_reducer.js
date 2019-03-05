@@ -5,7 +5,7 @@ import {
 } from "../../actions/notebook_actions";
 import { merge } from 'lodash';
 
-const notebookReducer = (oldState = { }, action) => {
+const notebooksReducer = (oldState = { }, action) => {
     Object.freeze(oldState);
     let newState = {};
 
@@ -36,4 +36,4 @@ const notebookReducer = (oldState = { }, action) => {
     }
 };
 
-export default notebookReducer;
+export default notebooksReducer;
