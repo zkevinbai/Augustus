@@ -14,4 +14,5 @@ class Notebook < ApplicationRecord
     validates :notebook_title, uniqueness: { scope: [:user_id] }
 
     belongs_to :user
+    has_many :notes
 end

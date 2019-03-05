@@ -19,6 +19,8 @@ class User < ApplicationRecord
     validates :password, length: {minimum: 7, allow_nil: true}
 
     has_many :notebooks
+    has_many :notes,
+        through: :notebooks
 
     def password=(password)
         @password=password
