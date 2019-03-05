@@ -9,7 +9,8 @@ import LNotebooksIndexContainer from './notebooks/L_notebooks_index_container';
 import MRNotebooksIndexContainer from './notebooks/MR_notebooks_container';
 import MRNotebooksCreateModalContainer from './notebooks/MR_notebooks_modal_create_form_container';
 import MRNotebooksEditModalContainer from './notebooks/MR_notebooks_modal_edit_form_container';
-import PremiumFeatures from './premium_features';
+import PremiumFeatures from './premium/premium_features';
+import PremiumCard from './premium/premium_card';
 
 class Ink extends React.Component{
     constructor(props){
@@ -25,8 +26,10 @@ class Ink extends React.Component{
         this.notebookCreateModal = this.notebookCreateModal.bind(this);
         this.notebookEditModal = this.notebookEditModal.bind(this);
         this.premiumFeatures = this.premiumFeatures.bind(this);
+        this.premiumCard = this.premiumCard.bind(this);
 
         this.triggerPremium = this.triggerPremium.bind(this);
+        this.triggerPremiumCard = this.triggerPremiumCard.bind(this);
     }
 
     hide(field) {
@@ -61,6 +64,21 @@ class Ink extends React.Component{
             pathName += "premium";
         } else {
             pathName += "/premium";
+        }
+
+        this.props.history.push(pathName);
+    }
+
+    premiumCard(){
+        return <ProtectRoute path="/:params*/premiumcard" exact component={PremiumCard} /> 
+    }
+
+    triggerPremiumCard(){
+        let pathName = this.props.history.location.pathname;
+        if( pathName === "/"){
+            pathName += "premiumcard";
+        } else {
+            pathName += "/premiumcard";
         }
 
         this.props.history.push(pathName);
@@ -151,7 +169,7 @@ class Ink extends React.Component{
             </div>
 
             <div className="Premium leftbar-sub" >
-                <a onClick={() => console.log("click")}>
+                <a onClick={this.triggerPremiumCard}> 
                     <i className="fas fa-chevron-circle-up"></i>
                     <h1>Premium</h1>
                 </a>
@@ -162,6 +180,7 @@ class Ink extends React.Component{
         {this.notebookCreateModal()}
         {this.notebookEditModal()}
         {this.premiumFeatures()}
+        {this.premiumCard()}
 
         <div className="mbar bar">
             <h1>All Notes</h1>
