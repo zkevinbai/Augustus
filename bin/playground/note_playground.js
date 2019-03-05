@@ -10,8 +10,8 @@ let note1 = {
 };
 
 let note1 = {
-    note_title: "222",
-    note_body: "222 body",
+    note_title: "Otto's note",
+    note_body: "test body",
     notebook_id: 54
 };
 
@@ -79,25 +79,25 @@ let notedelete = {
 
 // Window API Testing ----------------------------------------------------------
 
-notesIndex().then((res) => console.log(res));
+// notesIndex().then((res) => console.log(res));
 
-noteShow(5).then((res) => console.log(res));
+// noteShow(5).then((res) => console.log(res));
 
-createNote(note1).then((res) => console.log(res));
+// createNote(note1).then((res) => console.log(res));
 
-updateNote(updatenote1).then((res) => console.log(res));
+// updateNote(updatenote1).then((res) => console.log(res));
 
-deleteNote(4).then((res) => console.log(res));
+// deleteNote(4).then((res) => console.log(res));
 
 // Window Actions Testing ------------------------------------------------------
 
-// noteIndex()(dispatch);
+notesIndex()(dispatch);
 
-// notehow(1)(dispatch); note necessary
+noteShow(1)(dispatch);
 
-// createNotebook(note1)(dispatch);
+createNote(note1)(dispatch);
 
-// updateNotebook(updatenote1)(dispatch);
+updateNote(unote1)(dispatch);
 // you only need to pass up the thing you want to change
 
-// deleteNotebook(21)(dispatch);
+deleteNote(5)(dispatch);

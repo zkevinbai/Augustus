@@ -11,6 +11,7 @@ import * as NotebookApiUtil from './util/notebook_api_util';
 import * as NotebookActions from './actions/notebook_actions';
 
 import * as NoteApiUtil from './util/note_api_util';
+import * as NoteActions from './actions/note_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     const rootEl = document.getElementById('root');
@@ -52,11 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // window.updateNotebook = NotebookApiUtil.updateNotebook;
         // window.deleteNotebook = NotebookApiUtil.deleteNotebook;
             //* Note AJAX ------------------------------------------------------
-        window.notesIndex = NoteApiUtil.notesIndex;
-        window.noteShow = NoteApiUtil.noteShow;
-        window.createNote = NoteApiUtil.createNote;
-        window.updateNote = NoteApiUtil.updateNote;
-        window.deleteNote = NoteApiUtil.deleteNote;
+        // window.notesIndex = NoteApiUtil.notesIndex;
+        // window.noteShow = NoteApiUtil.noteShow;
+        // window.createNote = NoteApiUtil.createNote;
+        // window.updateNote = NoteApiUtil.updateNote;
+        // window.deleteNote = NoteApiUtil.deleteNote;
 
     // Window Actions ----------------------------------------------------------
             //* Session Actions ------------------------------------------------
@@ -70,6 +71,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // window.createNotebook = NotebookActions.createNotebook;
         // window.updateNotebook = NotebookActions.updateNotebook;
         // window.deleteNotebook = NotebookActions.deleteNotebook;
+            //* Note Actions -----------------------------------------------
+        window.notesIndex = NoteActions.notesIndex;
+        window.noteShow = NoteActions.noteShow;
+        window.createNote = NoteActions.createNote;
+        window.updateNote = NoteActions.updateNote;
+        window.deleteNote = NoteActions.deleteNote;
     
     // Window Store ------------------------------------------------------------
         window.getState = store.getState;
