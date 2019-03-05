@@ -9,8 +9,11 @@ import LNotebooksIndexContainer from './notebooks/L_notebooks_index_container';
 import MRNotebooksIndexContainer from './notebooks/MR_notebooks_index_container';
 import MRNotebooksCreateModalContainer from './notebooks/MR_notebooks_modal_create_form_container';
 import MRNotebooksEditModalContainer from './notebooks/MR_notebooks_modal_edit_form_container';
+
 import PremiumFeatures from './premium/premium_features';
 import PremiumCard from './premium/premium_card';
+
+import MUserNotesContainer from './notes/M_user_notes_container';
 
 class Ink extends React.Component{
     constructor(props){
@@ -30,6 +33,8 @@ class Ink extends React.Component{
 
         this.triggerPremium = this.triggerPremium.bind(this);
         this.triggerPremiumCard = this.triggerPremiumCard.bind(this);
+
+        this.allNotes = this.allNotes.bind(this);
     }
 
     hide(field) {
@@ -82,6 +87,10 @@ class Ink extends React.Component{
         }
 
         this.props.history.push(pathName);
+    }
+
+    allNotes(){
+        return <ProtectRoute path="/" exact component={MUserNotesContainer} /> 
     }
 
     render(){
@@ -181,10 +190,12 @@ class Ink extends React.Component{
         {this.notebookEditModal()}
         {this.premiumFeatures()}
         {this.premiumCard()}
+        {/* {this.allNotes()} */}
 
         <div className="mbar bar">
             <h1>All Notes</h1>
-            <ul>
+            {this.allNotes()}
+            {/* <ul>
                 <li>text</li>
                 <li>text</li>
                 <li>text</li>
@@ -194,7 +205,7 @@ class Ink extends React.Component{
                 <li>text</li>
                 <li>text</li>
                 <li>text</li>
-            </ul>
+            </ul> */}
         </div>
         <div className="content bar">
             <h1>Main Nav</h1>

@@ -1,21 +1,22 @@
-.temp-modal{
-    grid-column: 2/3;
-    grid-row: 1/11;
-    z-index: 1;
-    height: 100%;
-    background: rgba(233, 58, 58, 0.35);
-    background: rgba(255, 255, 255, 1);
+// .temp-modal{
+//     // grid-row: 2;
+//     // grid-column: 2/3;
+//     // grid-row: 1/11;
+//     // z-index: 1;
+//     // height: 100%;
+//     // background: rgba(233, 58, 58, 0.35);
+//     // background: rgba(255, 255, 255, 1);
 
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 100px 1fr;
-    // justify-items: center;
+//     // display: grid;
+//     // grid-template-columns: 1fr;
+//     // grid-template-rows: 100px 1fr;
+//     // // justify-items: center;
 
-    .placeholder{
-        grid-row: 1;
-        background: rgba(91, 94, 238, 0.35);
-    }
-}
+//     // .placeholder{
+//     //     grid-row: 1;
+//     //     background: rgba(91, 94, 238, 0.35);
+//     // }
+// }
 
 .m-UserNotes-index{
     grid-row: 2/11;
