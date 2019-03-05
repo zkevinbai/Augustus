@@ -1,11 +1,8 @@
 class Api::NotesController < ApplicationController
 
     def index
-        currrent_notebooks = current_user.notebooks
-        @notes = []
-        currrent_notebooks.each do |notebook|
-            @notes += notebook.notes
-        end
+        @notes = current_user.notes
+        
         render :index
     end
 
@@ -18,7 +15,7 @@ class Api::NotesController < ApplicationController
     def create
         @note = Note.new(note_params)
 
-        if @note.save 
+        if @note.save
             render :show
         else
             render json: @note.errors.full_messages, status: 404
