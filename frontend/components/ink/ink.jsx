@@ -26,7 +26,7 @@ class Ink extends React.Component{
         this.notebookEditModal = this.notebookEditModal.bind(this);
         this.premiumFeatures = this.premiumFeatures.bind(this);
 
-        this.trigerPremium = this.trigerPremium.bind(this);
+        this.triggerPremium = this.triggerPremium.bind(this);
     }
 
     hide(field) {
@@ -55,8 +55,15 @@ class Ink extends React.Component{
         return <ProtectRoute path="/:params*/premium" exact component={PremiumFeatures} />
     }
 
-    trigerPremium(){
-        debugger
+    triggerPremium(){
+        let pathName = this.props.history.location.pathname;
+        if( pathName === "/"){
+            pathName += "premium";
+        } else {
+            pathName += "/premium";
+        }
+
+        this.props.history.push(pathName);
     }
 
     render(){
@@ -81,7 +88,9 @@ class Ink extends React.Component{
                 <a onClick={() => console.log("click")}> 
                     <span className="searchbar">
                         <input type="text" placeholder="Search all notes"/>
-                        <button className="fas fa-search"></button>
+                        <button className="fas fa-search"
+                                onClick={this.triggerPremium}
+                        ></button>
                     </span>
                 </a>
             </div>
@@ -94,7 +103,7 @@ class Ink extends React.Component{
             </div>
             
             <div className="shortcuts leftbar-sub" >
-                <a onClick={() => console.log("click")}> 
+                <a onClick={this.triggerPremium}> 
                     <i className="fas fa-star"></i>
                     <h1>Shortcuts</h1>
                 </a>
@@ -121,7 +130,7 @@ class Ink extends React.Component{
             </div>
 
             <div className="sharedWith leftbar-sub" >
-                <a onClick={() => console.log("click")}> 
+                <a onClick={this.triggerPremium}> 
                     <i className="fas fa-share-alt"></i>
                     <h1>Shared with Me</h1>
                 </a>
@@ -135,7 +144,7 @@ class Ink extends React.Component{
             </div>
 
             <div className="Trash leftbar-sub" >
-                <a onClick={() => console.log("click")}>
+                <a onClick={this.triggerPremium}> 
                     <i className="fas fa-trash"></i>
                     <h1>Trash</h1>
                 </a>
