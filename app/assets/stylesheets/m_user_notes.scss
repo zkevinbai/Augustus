@@ -21,9 +21,18 @@
     border-bottom-right-radius: 5px;
     border-bottom: 5px solid rgba(26, 26, 26, 1);
 
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+
     h1{
+        grid-row: 1;
         font-size: 42px;
     }
+}
+
+.m-allnotes-header-sub{
+    grid-row: 2;
+    align-self: end;
 }
 
 .m-UserNotes-index{

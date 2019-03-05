@@ -15,6 +15,9 @@ class MiddleUserNotes extends React.Component {
             <div className="m-allnotes">
                 <div className="m-allnotes-header" >
                     <h1>All Notes</h1>
+                    <div className="m-allnotes-header-sub">
+                        <p>{this.props.notes.length} notes</p>
+                    </div>
                 </div>
                 <div className="m-UserNotes-index">
                     {this.props.notes.map(note =>
