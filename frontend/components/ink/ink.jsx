@@ -192,7 +192,6 @@ class Ink extends React.Component{
         {this.premiumCard()}
 
         <div className="mbar bar">
-            <h1>All Notes</h1>
             {this.allNotes()}
         </div>
         <div className="content bar">

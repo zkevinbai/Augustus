@@ -12,15 +12,20 @@ class MiddleUserNotes extends React.Component {
 
     render() {
         return (
-            <div className="m-UserNotes-index">
-                {this.props.notes.map(note =>
-                    (
-                        <Link to={`/notebook/${note.notebook_id}/note/${note.id}`} key={note.id}>
-                            <h2>{note.note_title}</h2>
-                            <p>{note.note_body}</p>
-                        </Link>
-                    )
-                )}
+            <div className="m-allnotes">
+                <div className="m-allnotes-header" >
+                    <h1>All Notes</h1>
+                </div>
+                <div className="m-UserNotes-index">
+                    {this.props.notes.map(note =>
+                        (
+                            <Link to={`/notebook/${note.notebook_id}/note/${note.id}`} key={note.id}>
+                                <h2>{note.note_title}</h2>
+                                <p>{note.note_body}</p>
+                            </Link>
+                        )
+                    )}
+                </div>
             </div>
         )
     }
