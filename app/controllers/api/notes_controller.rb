@@ -21,8 +21,7 @@ class Api::NotesController < ApplicationController
         if @note.save 
             render :show
         else
-            # render json: @note.errors.full_messages, status: 404
-            render json: "This diddn't work"
+            render json: @note.errors.full_messages, status: 404
         end
     end
 
