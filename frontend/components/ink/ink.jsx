@@ -90,7 +90,7 @@ class Ink extends React.Component{
     }
 
     allNotes(){
-        return <ProtectRoute path="/" exact component={MUserNotesContainer} /> 
+        return <ProtectRoute path="/" component={MUserNotesContainer} /> 
     }
 
     render(){
@@ -190,22 +190,10 @@ class Ink extends React.Component{
         {this.notebookEditModal()}
         {this.premiumFeatures()}
         {this.premiumCard()}
-        {/* {this.allNotes()} */}
 
         <div className="mbar bar">
             <h1>All Notes</h1>
             {this.allNotes()}
-            {/* <ul>
-                <li>text</li>
-                <li>text</li>
-                <li>text</li>
-                <li>text</li>
-                <li>text</li>
-                <li>text</li>
-                <li>text</li>
-                <li>text</li>
-                <li>text</li>
-            </ul> */}
         </div>
         <div className="content bar">
             <h1>Main Nav</h1>
