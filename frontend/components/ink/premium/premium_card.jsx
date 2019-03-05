@@ -8,7 +8,7 @@ class PremiumCard extends React.Component {
 
     render() {
         return (
-            <div className="modal" onClick={() => this.props.history.goBack()}>
+            <div className="modal premiumModal" onClick={() => this.props.history.goBack()}>
                 <div className="PremiumFeatures">
                     <i className="fas fa-times"
                         onClick={() => this.props.history.goBack()}
