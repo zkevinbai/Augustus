@@ -4,10 +4,40 @@
     z-index: 1;
     height: 100%;
     background: rgba(233, 58, 58, 0.35);
+    background: rgba(255, 255, 255, 1);
 
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 100px 1fr;
     // justify-items: center;
+
+    .placeholder{
+        grid-row: 1;
+        background: rgba(91, 94, 238, 0.35);
+    }
 }
 
+.m-UserNotes-index{
+    grid-row: 2/11;
+    overflow: scroll;
+
+    h2, p{
+        border: none;
+    }
+
+    h2{
+        font-size: 25px;
+    }
+
+    p{
+        font-size: 20px;
+    }
+
+    a{
+        background: rgba(100,255,255,0.5);
+        padding: 3px;
+        margin: 3px;
+        display: block;
+        height: 115px;
+    }
+}
