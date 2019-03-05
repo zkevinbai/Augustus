@@ -14,6 +14,7 @@ import PremiumFeatures from './premium/premium_features';
 import PremiumCard from './premium/premium_card';
 
 import MUserNotesContainer from './notes/M_user_notes_container';
+import MNotebookNotesContainer from './notes/M_notebook_notes_container';
 
 class Ink extends React.Component{
     constructor(props){
@@ -35,6 +36,7 @@ class Ink extends React.Component{
         this.triggerPremiumCard = this.triggerPremiumCard.bind(this);
 
         this.allNotes = this.allNotes.bind(this);
+        this.allNotebookNotes = this.allNotebookNotes.bind(this);
     }
 
     hide(field) {
@@ -90,7 +92,14 @@ class Ink extends React.Component{
     }
 
     allNotes(){
-        return <ProtectRoute path="/" component={MUserNotesContainer} /> 
+        let pathName = this.props.history.location.pathname;
+        if(!pathName.includes("notebook")){
+            return <ProtectRoute path="/" component={MUserNotesContainer} /> 
+        }
+    }
+
+    allNotebookNotes(){
+        return <ProtectRoute path="/notebook/:id" component={MNotebookNotesContainer} /> 
     }
 
     render(){
@@ -193,6 +202,7 @@ class Ink extends React.Component{
 
         <div className="mbar bar">
             {this.allNotes()}
+            {this.allNotebookNotes()}
         </div>
         <div className="content bar">
             <h1>Main Nav</h1>

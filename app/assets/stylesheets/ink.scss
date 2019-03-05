@@ -231,23 +231,6 @@
     grid-template-rows: 100px 1fr;
 }
 
-.mbar ul{
-    overflow: scroll;
-    list-style: none;
-    padding-left: 0;
-}
-
-.mbar li {
-    /* background: gray; */
-    height: 115px;
-    padding: none;
-    margin-left: 0;
-}
-
-.mbar li:hover {
-    background: rgb(242, 242, 242)
-}
-
 /*----------------------------------- right nav ------------------------------*/
 .content{
     /* background: lightgreen; */
