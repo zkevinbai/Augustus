@@ -12,7 +12,6 @@ ActiveRecord::Base.transaction do
     User.destroy_all
     Notebook.destroy_all
 
-
     #create all info
     demo_user = User.create(
         username: "Octavian",

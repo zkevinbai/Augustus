@@ -25,6 +25,8 @@ class Ink extends React.Component{
         this.notebookCreateModal = this.notebookCreateModal.bind(this);
         this.notebookEditModal = this.notebookEditModal.bind(this);
         this.premiumFeatures = this.premiumFeatures.bind(this);
+
+        this.trigerPremium = this.trigerPremium.bind(this);
     }
 
     hide(field) {
@@ -51,6 +53,10 @@ class Ink extends React.Component{
 
     premiumFeatures(){
         return <ProtectRoute path="/:params*/premium" exact component={PremiumFeatures} />
+    }
+
+    trigerPremium(){
+        debugger
     }
 
     render(){
@@ -115,7 +121,7 @@ class Ink extends React.Component{
             </div>
 
             <div className="sharedWith leftbar-sub" >
-                <a onClick={() => console.log("click")}>
+                <a onClick={() => console.log("click")}> 
                     <i className="fas fa-share-alt"></i>
                     <h1>Shared with Me</h1>
                 </a>
@@ -146,7 +152,6 @@ class Ink extends React.Component{
         {this.notebooks()}
         {this.notebookCreateModal()}
         {this.notebookEditModal()}
-
         {this.premiumFeatures()}
 
         <div className="mbar bar">

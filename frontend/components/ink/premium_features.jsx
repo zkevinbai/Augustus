@@ -10,15 +10,18 @@ class PremiumFeatures extends React.Component {
         return (
             <div className="modal">
                 <div className="PremiumFeatures">
-                    <div className="PremiumFeaturesHeader" >
-                        <div className="notebookErrors">
-                        </div>
-                        <i className="fas fa-times"
-                            onClick={() => this.props.history.goBack()}
-                        ></i>
-                    </div>
+                    <i className="fas fa-times"
+                        onClick={() => this.props.history.goBack()}
+                    ></i>
                     <div>
-                        <h1>This is a premium Feature</h1>
+                        <h1>
+                            This is a Premium Feature
+                        </h1>
+                        <p>
+                            please get in touch if you would
+                            like to see it implemented in the future 
+                        </p>
+                        <a href="https://linkedin.com/in/kevinbai/">Get in Touch</a>
                     </div>
                 </div>
             </div>

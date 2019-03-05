@@ -9,7 +9,7 @@ const mapStateToProps = (storeState, ownProps) => {
     };
 };
 
-const authorized = ["/notebooks", "/notebook"];
+const authorized = ["/notebooks", "/notebook", "/premium"];
 
 const Auth = 
 ( { component: Component, path, loggedIn, location, exact} ) => {
