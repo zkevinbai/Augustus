@@ -6,7 +6,7 @@ import {
 import { ProtectRoute } from '../../util/route_util';
 
 import LNotebooksIndexContainer from './notebooks/L_notebooks_index_container';
-import MRNotebooksIndexContainer from './notebooks/MR_notebooks_container';
+import MRNotebooksIndexContainer from './notebooks/MR_notebooks_index_container';
 import MRNotebooksCreateModalContainer from './notebooks/MR_notebooks_modal_create_form_container';
 import MRNotebooksEditModalContainer from './notebooks/MR_notebooks_modal_edit_form_container';
 import PremiumFeatures from './premium/premium_features';
