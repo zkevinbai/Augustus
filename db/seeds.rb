@@ -8,9 +8,10 @@
 
 ActiveRecord::Base.transaction do 
 
-    # reset all databases
+    # reset all tables
     User.destroy_all
     Notebook.destroy_all
+    # Note.destroy_all
 
     #create all info
     demo_user = User.create(
@@ -19,8 +20,28 @@ ActiveRecord::Base.transaction do
         password: "password",
     )
 
-    demo_his = Notebook.create(
+    demo_programming = Notebook.create(
         user_id: demo_user.id, 
-        notebook_title: "history"
+        notebook_title: "Personal"
+    )
+
+    demo_history = Notebook.create(
+        user_id: demo_user.id, 
+        notebook_title: "History"
+    )
+
+    demo_programming = Notebook.create(
+        user_id: demo_user.id, 
+        notebook_title: "Programming"
+    )
+
+    demo_history = Notebook.create(
+        user_id: demo_user.id, 
+        notebook_title: "Books"
+    )
+
+    demo_history = Notebook.create(
+        user_id: demo_user.id, 
+        notebook_title: "Travel"
     )
 end
