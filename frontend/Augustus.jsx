@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             //* Notebook Actions -----------------------------------------------
         // window.notebooksIndex = NotebookActions.notebooksIndex;
         // window.notebookShow = NotebookActions.notebookShow;
-        window.createNotebook = NotebookActions.createNotebook;
+        // window.createNotebook = NotebookActions.createNotebook;
         // window.updateNotebook = NotebookActions.updateNotebook;
         // window.deleteNotebook = NotebookActions.deleteNotebook;
             //* Note Actions -----------------------------------------------

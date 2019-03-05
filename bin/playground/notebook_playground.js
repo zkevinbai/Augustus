@@ -34,7 +34,7 @@
     //     url: "api/notebooks",
     // }).then((res) => console.log(res));
 
-    // // Notebook Show
+    // Notebook Show
     // $.ajax({
     //     type: "GET",
     //     url: `api/notebooks/${1}`,
@@ -86,7 +86,7 @@
 
     notebooksIndex()(dispatch);
 
-    // notebookShow(1)(dispatch); note necessary
+    notebookShow(54)(dispatch); note necessary
 
     createNotebook(note1)(dispatch);
 
