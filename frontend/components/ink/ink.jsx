@@ -48,16 +48,21 @@ class Ink extends React.Component{
                 [{ 'header': [1, 2, false] }],
                 ['bold', 'italic', 'underline', 'strike', 'blockquote'],
                 [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
-                ['link', 'image'],
-                ['clean']
+                ['link', 'image', 'video'],
+                ['blockquote'],
+
+                [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+                [{ 'font': [] }],
+                [{ 'align': [] }]
             ],
         };
 
         this.formats = [
-            'header',
-            'bold', 'italic', 'underline', 'strike', 'blockquote',
+            'header', 'font', 'size',
+            'bold', 'italic', 'underline', 'strike', 
+            'blockquote',
             'list', 'bullet', 'indent',
-            'link', 'image'
+            'link', 'image', 'color', 'background', 'align'
         ];
     }
 
