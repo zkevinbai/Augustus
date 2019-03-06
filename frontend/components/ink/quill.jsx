@@ -10,8 +10,8 @@ class Editor extends React.Component {
         this.attachQuillRefs = this.attachQuillRefs.bind(this);
         this.modules = {
             toolbar: [
-                [{ 'font': [] }, { 'header': [1, 2, false] }, {'color': []}, {'background': []}],
-                ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+                [{ 'font': [] }, { 'header': [1, 2, 3, false] }, {'color': []}, {'background': []}],
+                ['bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block'],
                 [{ 'align': [] }, { 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
                 ['link', 'image', 'video'],
             ],
@@ -19,7 +19,7 @@ class Editor extends React.Component {
         this.formats = [
             'header', 'font', 'size',
             'bold', 'italic', 'underline', 'strike',
-            'blockquote',
+            'blockquote', 'code-block',
             'list', 'bullet', 'indent',
             'link', 'image', 'color', 'background', 'align'
         ];
