@@ -16,12 +16,15 @@ import PremiumCard from './premium/premium_card';
 import MUserNotesContainer from './notes/M_user_notes_container';
 import MNotebookNotesContainer from './notes/M_notebook_notes_container';
 
+import ReactQuill from 'react-quill';
+
 class Ink extends React.Component{
     constructor(props){
         super(props);
         this.state = {
             logout: true,
             notebooks: true,
+            text: ""
         };
         this.hide = this.hide.bind(this);
         this.hidden = this.hidden.bind(this);
@@ -37,6 +40,12 @@ class Ink extends React.Component{
 
         this.allNotes = this.allNotes.bind(this);
         this.allNotebookNotes = this.allNotebookNotes.bind(this);
+
+        this.handleChange = this.handleChange.bind(this)
+    }
+
+    handleChange(value) {
+        this.setState({ text: value });
     }
 
     hide(field) {
@@ -206,9 +215,14 @@ class Ink extends React.Component{
         </div>
         <div className="content bar">
             <h1>Main Nav</h1>
+            <ReactQuill 
+                theme="snow" 
+                value={this.state.text}
+                onChange={this.handleChange} 
+            />
             <p>
                 content goes here
-        </p>
+            </p>
             <h1>Tags</h1>
         </div>
     </div>
