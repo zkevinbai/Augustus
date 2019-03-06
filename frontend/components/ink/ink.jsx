@@ -16,15 +16,14 @@ import PremiumCard from './premium/premium_card';
 import MUserNotesContainer from './notes/M_user_notes_container';
 import MNotebookNotesContainer from './notes/M_notebook_notes_container';
 
-import ReactQuill from 'react-quill';
+import Editor from './quill';
 
 class Ink extends React.Component{
     constructor(props){
         super(props);
         this.state = {
             logout: true,
-            notebooks: true,
-            text: ""
+            notebooks: true
         };
         this.hide = this.hide.bind(this);
         this.hidden = this.hidden.bind(this);
@@ -40,30 +39,6 @@ class Ink extends React.Component{
 
         this.allNotes = this.allNotes.bind(this);
         this.allNotebookNotes = this.allNotebookNotes.bind(this);
-
-        this.handleChange = this.handleChange.bind(this);
-
-        this.modules = {
-            toolbar: [
-                [{ 'header': [1, 2, false] }],
-                ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-                [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
-                ['link', 'image', 'video'],
-                ['blockquote'],
-
-                [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
-                [{ 'font': [] }],
-                [{ 'align': [] }]
-            ],
-        };
-
-        this.formats = [
-            'header', 'font', 'size',
-            'bold', 'italic', 'underline', 'strike', 
-            'blockquote',
-            'list', 'bullet', 'indent',
-            'link', 'image', 'color', 'background', 'align'
-        ];
     }
 
     handleChange(value) {
@@ -135,7 +110,6 @@ class Ink extends React.Component{
     }
 
     render(){
-        // debugger
     return (
     <div className="bars">
         <div className="lbar bar">
@@ -237,17 +211,7 @@ class Ink extends React.Component{
             {this.allNotebookNotes()}
         </div>
         <div className="content bar">
-            <h1>Main Nav</h1>
-            <ReactQuill 
-                theme="snow" 
-                value={this.state.text}
-                onChange={this.handleChange} 
-                modules={this.modules}
-                formats={this.formats}
-            />
-            <p>
-                content goes here
-            </p>
+            <Editor/>
             <h1>Tags</h1>
         </div>
     </div>
