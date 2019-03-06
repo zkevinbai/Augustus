@@ -41,7 +41,24 @@ class Ink extends React.Component{
         this.allNotes = this.allNotes.bind(this);
         this.allNotebookNotes = this.allNotebookNotes.bind(this);
 
-        this.handleChange = this.handleChange.bind(this)
+        this.handleChange = this.handleChange.bind(this);
+
+        this.modules = {
+            toolbar: [
+                [{ 'header': [1, 2, false] }],
+                ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+                [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
+                ['link', 'image'],
+                ['clean']
+            ],
+        };
+
+        this.formats = [
+            'header',
+            'bold', 'italic', 'underline', 'strike', 'blockquote',
+            'list', 'bullet', 'indent',
+            'link', 'image'
+        ];
     }
 
     handleChange(value) {
@@ -220,6 +237,8 @@ class Ink extends React.Component{
                 theme="snow" 
                 value={this.state.text}
                 onChange={this.handleChange} 
+                modules={this.modules}
+                formats={this.formats}
             />
             <p>
                 content goes here
