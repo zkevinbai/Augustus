@@ -4,6 +4,9 @@ import MUserNotes from './M_user_notes';
 import {
     notesIndex
 } from '../../../actions/note_actions';
+import {
+    notebookShow
+} from '../../../actions/notebook_actions';
 
 const mapStateToProps = (storeState, ownProps) => {
     let allnotes = [];
@@ -18,10 +21,14 @@ const mapStateToProps = (storeState, ownProps) => {
         notes = allnotes.filter(note => note.notebook_id === notebook_id);
     }
 
-    // let notebook_title = storeState.notebooks(notebook_id);
-    // debugger
+    let notebookTitle;
+    if (Object.values(storeState.entities.notebooks).length !== 0){
+        notebookTitle = storeState.entities.notebooks[notebook_id].notebook_title;
+    }
+
     return {
-        notes
+        notes,
+        notebookTitle
     };
 };
 

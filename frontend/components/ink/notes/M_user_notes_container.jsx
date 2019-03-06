@@ -10,10 +10,9 @@ const mapStateToProps = (storeState, ownProps) => {
     if (storeState.entities.notes) {
         notes = Object.values(storeState.entities.notes);
     }
-    let errors = storeState.errors.notes;
     return {
         notes,
-        errors
+        notebookTitle:"All Notes"
     };
 };
 

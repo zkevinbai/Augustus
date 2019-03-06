@@ -14,7 +14,7 @@ class MiddleUserNotes extends React.Component {
         return (
             <div className="m-allnotes">
                 <div className="m-allnotes-header" >
-                    <h1>All Notes</h1>
+                    <h1>{`${this.props.notebookTitle}`}</h1>
                     <div className="m-allnotes-header-sub">
                         <p>{this.props.notes.length} notes</p>
                     </div>
