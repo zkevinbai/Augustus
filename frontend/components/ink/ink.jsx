@@ -46,6 +46,7 @@ class Ink extends React.Component{
 
     handleChange(value) {
         this.setState({ text: value });
+        console.log(this.state.text);
     }
 
     hide(field) {
