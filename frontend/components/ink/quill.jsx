@@ -3,10 +3,16 @@ import React from 'react';
 class Editor extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { editorHtml: '' };
+        this.state = { 
+            title: '',
+            body: ''
+        };
         this.quillRef = null;
         this.reactQuillRef = null;
-        this.handleChange = this.handleChange.bind(this)
+        this.handleChange = this.handleChange.bind(this);
+        this.handleTitle = this.handleTitle.bind(this);
+        this.submitTitle = this.submitTitle.bind(this);
+
         this.attachQuillRefs = this.attachQuillRefs.bind(this);
         this.modules = {
             toolbar: [
@@ -14,7 +20,7 @@ class Editor extends React.Component {
                 ['bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block'],
                 [{ 'align': [] }, { 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
                 ['link', 'image', 'video'],
-            ],
+            ]
         };
         this.formats = [
             'header', 'font', 'size',
@@ -43,17 +49,33 @@ class Editor extends React.Component {
         if (quillRef != null) this.quillRef = quillRef;
     }
 
-    handleChange(html) {
-        this.setState({ editorHtml: html });
+    handleTitle(e) {
+        this.setState({ title: e.target.value });
+        console.log(this.state); 
+    }
+
+    handleChange() {
         this.setState({ body: this.quillRef.getContents() });
         console.log(this.state);
     }
 
+    submitTitle(){
+        // console.log(this.state.title);
+        console.log(`write a function to submit this later`);
+    }
+
     render() {
         return (
-            <div className="quill-container" >
+            <div className="quill-scroll-container" >
                 <div className="c-main-nav">
-                    Main Nav
+                    <input 
+                        className="quill-title"
+                        type="text"
+                        value={this.state.title}
+                        placeholder={'Title'}
+                        onChange={this.handleTitle}
+                        onBlur={this.submitTitle}
+                    />
                 </div>
                 <ReactQuill
                     ref={(el) => { this.reactQuillRef = el }}
@@ -70,40 +92,5 @@ class Editor extends React.Component {
 
 export default Editor;
 
-/*
- * Quill modules to attach to editor
- * See https://quilljs.com/docs/modules/ for complete options
-//  */
-// Editor.modules = {}
-// Editor.modules.toolbar = [
-//     ['bold', 'italic', 'underline', 'strike'],       // toggled buttons
-//     ['blockquote', 'code-block'],                    // blocks
-//     [{ 'header': 1 }, { 'header': 2 }],              // custom button values
-//     [{ 'list': 'ordered' }, { 'list': 'bullet' }],    // lists
-//     [{ 'script': 'sub' }, { 'script': 'super' }],     // superscript/subscript
-//     [{ 'indent': '-1' }, { 'indent': '+1' }],         // outdent/indent
-//     [{ 'direction': 'rtl' }],                        // text direction
-//     [{ 'size': ['small', false, 'large', 'huge'] }], // custom dropdown
-//     [{ 'header': [1, 2, 3, 4, 5, 6, false] }],       // header dropdown
-//     [{ 'color': [] }, { 'background': [] }],         // dropdown with defaults
-//     [{ 'font': [] }],                                // font family
-//     [{ 'align': [] }],                               // text align
-//     ['clean'],                                       // remove formatting
-// ]
-
-// /* 
-//  * Quill editor formats
-//  * See https://quilljs.com/docs/formats/
-//  */
-// Editor.formats = [
-//     'header', 'font', 'background', 'color', 'code', 'size',
-//     'bold', 'italic', 'underline', 'strike', 'blockquote',
-//     'list', 'bullet', 'indent', 'script', 'align', 'direction',
-//     'link', 'image', 'code-block', 'formula', 'video'
-// ]
-
-// Editor.propTypes = {
-//     placeholder: React.PropTypes.string,
-// }
-
-{/* <Editor placeholder={'Press button to insert text...'} />, */}
+// onBlur = {(e) => this.setState({ title: e.target.value })}
+// on = {(e) => this.setState({ title: e.target.value })}

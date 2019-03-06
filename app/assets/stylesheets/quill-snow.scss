@@ -9,6 +9,7 @@
   font-family: Helvetica, Arial, sans-serif;
   font-size: 13px;
   height: calc(100vh - 150px);
+  min-height: 100%;
   margin: 0px;
   position: relative;
 }
@@ -945,4 +946,7 @@
 }
 .ql-container.ql-snow {
   border: 1px solid #ccc;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid rgb(100,100,100);
 }
