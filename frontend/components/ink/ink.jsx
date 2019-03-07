@@ -16,7 +16,8 @@ import PremiumCard from './premium/premium_card';
 import MUserNotesContainer from './notes/M_user_notes_container';
 import MNotebookNotesContainer from './notes/M_notebook_notes_container';
 
-import Editor from './quill';
+// import Editor from './quill';
+import EditorContainer from './quill_container';
 
 class Ink extends React.Component{
     constructor(props){
@@ -211,7 +212,7 @@ class Ink extends React.Component{
             {this.allNotebookNotes()}
         </div>
         <div className="content bar">
-            <Editor/>
+            <ProtectRoute path="/" component={EditorContainer}/>
             <h1>Tags</h1>
         </div>
     </div>
