@@ -29,7 +29,7 @@ class MiddleUserNotes extends React.Component {
                         <div className="m-UserNotes-index-item" key={note.id} >
                             <Link to={`/notebook/${note.notebook_id}/note/${note.id}`}>
                                 <h2>{note.note_title}</h2>
-                                <p>{note.note_body}</p>
+                                <p>{note.note_body.replace(/<(?:.|\n)*?>/gm, '')}</p>
                             </Link>
                             <i className="fas fa-skull-crossbones"
                                 onClick={() => {
