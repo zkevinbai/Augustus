@@ -7,6 +7,7 @@ class Editor extends React.Component {
             title: '',
             body: ''
         };
+        
         this.quillRef = null;
         this.reactQuillRef = null;
         this.handleChange = this.handleChange.bind(this);
@@ -37,6 +38,13 @@ class Editor extends React.Component {
 
     componentDidUpdate() {
         this.attachQuillRefs();
+        if (!this.notebooks){
+            this.notebooks = Object.values(this.props.notebooks);
+        } else if (this.notebooks.length === 1 && !this.state.notebook_id) {
+            this.setState({
+                notebook_id: this.notebooks[0].id
+            });
+        }
     }
 
     attachQuillRefs() {
@@ -57,6 +65,7 @@ class Editor extends React.Component {
     handleChange() {
         this.setState({ body: this.quillRef.getContents() });
         console.log(this.state);
+        debugger
     }
 
     submitTitle(){
