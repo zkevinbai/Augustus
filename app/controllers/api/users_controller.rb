@@ -4,6 +4,10 @@ class Api::UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             login(@user)
+            Notebook.create({
+                notebook_title: "Personal",
+                user_id: @user.id
+            })
             render :show
         else
             render json: @user.errors.full_messages, status: 404
