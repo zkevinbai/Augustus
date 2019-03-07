@@ -20,8 +20,6 @@ const mapStateToProps = (storeState, ownProps) => {
         notebook_id: parseInt(ownProps.match.params.id)
     };
 
-    // debugger
-
     note = storeState.entities.notes[ownProps.match.params.noteId];
 
     let notes = storeState.notes;

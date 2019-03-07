@@ -3,6 +3,7 @@
     grid-template-columns: 7fr 1fr;
 
     i{
+        color: black;
         font-size: 50px;
         cursor: pointer;
         justify-self: center;
@@ -12,7 +13,6 @@
 .quill-title{
     font-family: 'Comfortaa', cursive; 
     font-size: 50px;
-    // width: 70%;
 
     border: none;
     outline: none;

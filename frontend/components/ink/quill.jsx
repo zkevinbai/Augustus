@@ -17,7 +17,6 @@ class Editor extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleTitle = this.handleTitle.bind(this);
-        this.submitTitle = this.submitTitle.bind(this);
         this.createNote = this.createNote.bind(this);
 
         this.attachQuillRefs = this.attachQuillRefs.bind(this);
@@ -59,6 +58,9 @@ class Editor extends React.Component {
 
         if (prevProps.match.params.id !== this.props.match.params.id) {
             console.log("this note was changed");
+            this.setState({
+                notebook_id: parseInt(this.props.match.params.id)
+            });
         }
 
         if (prevProps.match.params.noteId !== this.props.match.params.noteId){
@@ -76,14 +78,6 @@ class Editor extends React.Component {
                 }
             );
         }
-
-        if (!this.notebooks) {
-            this.notebooks = Object.values(this.props.notebooks);
-        } else if (this.notebooks.length >= 1 && !this.state.notebook_id) {
-            this.setState({
-                notebook_id: this.notebooks[0].id
-            });
-        } 
         console.log(this.state);
     }
 
@@ -104,40 +98,31 @@ class Editor extends React.Component {
 
     handleTitle(e) {
         this.setState({ note_title: e.target.value });
-        console.log(this.state); 
     }
 
     handleChange(content, delta, source, editor) {
         this.setState({ note_body: content });
-
         console.log("on change triggered");
     }
 
-    submitTitle(){
-        console.log(`write a function to submit this later`);
-    }
-
     createNote(){
-
         if (this.props.match.params.noteId){
-            console.log("no problem");
-
+            console.log("edit note");
             this.setState({
                 id: parseInt(this.props.match.params.noteId)
             });
             this.setState({ note_body: (this.state.note_body) });
             this.props.updateNote(this.state);
         } else {
+            console.log("create note");
             this.setState({note_body: (this.state.note_body)});
             this.props.createNote(this.state).then(resNote => {
                 this.props.history.replace(`${this.props.history.location.pathname + `/note/${resNote.note.id}`}`);
-            }
-            );
+            });
         }
     }
 
     render() {
-        // debugger
         return (
             <div className="quill-scroll-container">
                 <div className="c-main-nav">
@@ -154,7 +139,7 @@ class Editor extends React.Component {
                         onBlur={this.submitTitle}
                     />
 
-                    <i className="fas fa-save"
+                    <i class="fas fa-feather-alt"
                         onClick={this.createNote}
                     ></i>
                 </div>
@@ -176,17 +161,3 @@ class Editor extends React.Component {
 }
 
 export default Editor;
-
-// onBlur = {(e) => this.setState({ title: e.target.value })}
-// on = {(e) => this.setState({ title: e.target.value })}
-// defaultValue = {
-//     this.state ?
-//     this.state.note_body :
-//     ""
-// // }
-
-// defaultValue = {
-//     this.props.note ?
-//     (this.props.note.note_body) :
-//     (this.state.note_body)
-// }
