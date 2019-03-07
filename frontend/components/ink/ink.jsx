@@ -1,7 +1,8 @@
 import React from 'react';
 import { 
     Link,
-    NavLink
+    NavLink,
+    Switch
 } from 'react-router-dom';
 import { ProtectRoute } from '../../util/route_util';
 
@@ -212,7 +213,11 @@ class Ink extends React.Component{
             {this.allNotebookNotes()}
         </div>
         <div className="content bar">
-            <ProtectRoute path="/" component={EditorContainer}/>
+            <Switch>
+                <ProtectRoute path="/notebook/:id/note/:noteId" component={EditorContainer} />
+                <ProtectRoute path="/notebook/:id" component={EditorContainer} />
+                <ProtectRoute path="/" component={EditorContainer} />
+            </Switch>
             <h1>Tags</h1>
         </div>
     </div>
