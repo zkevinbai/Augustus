@@ -8,7 +8,7 @@ import {
     updateNote,
     noteShow
 } from '../../actions/note_actions';
-import Quill from './quill';
+import QuillEdit from './quill_edit';
 
 const mapStateToProps = (storeState, ownProps) => {
     const notebooks = storeState.entities.notebooks;
@@ -26,4 +26,4 @@ const mapDispatchToProps = (dispatch) => ({
     noteShow: (note) => dispatch(noteShow(note))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Quill);
+export default connect(mapStateToProps, mapDispatchToProps)(QuillEdit);

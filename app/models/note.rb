@@ -11,7 +11,8 @@
 #
 
 class Note < ApplicationRecord
-    validates :note_title, :note_body, :notebook_id, null: false
+    # validates :note_title, :note_body, :notebook_id, null: false
+    validates :note_body, :notebook_id, null: false
 
     belongs_to :notebook
     has_one :user,

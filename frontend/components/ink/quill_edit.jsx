@@ -4,12 +4,8 @@ class Editor extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = { 
-            note_title: '',
-            note_body: '',
-            notebook_id: parseInt(this.props.match.params.id)
-        };
-        
+        this.state = props.note;
+
         this.quillRef = null;
         this.reactQuillRef = null;
         this.handleChange = this.handleChange.bind(this);
@@ -20,7 +16,7 @@ class Editor extends React.Component {
         this.attachQuillRefs = this.attachQuillRefs.bind(this);
         this.modules = {
             toolbar: [
-                [{ 'font': [] }, { 'header': [1, 2, 3, false] }, {'color': []}, {'background': []}],
+                [{ 'font': [] }, { 'header': [1, 2, 3, false] }, { 'color': [] }, { 'background': [] }],
                 ['bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block'],
                 [{ 'align': [] }, { 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
                 ['link', 'image', 'video'],
@@ -35,26 +31,18 @@ class Editor extends React.Component {
         ];
     }
 
-    componentDidMount() {
+    componentDidMount(){
+        debugger
         this.attachQuillRefs();
-        this.props.noteShow()
+        this.props.notesIndex();
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(){
         this.attachQuillRefs();
-
-        if (!this.notebooks) {
-            this.notebooks = Object.values(this.props.notebooks);
-        } else if (this.notebooks.length >= 1 && !this.state.notebook_id) {
-            this.setState({
-                notebook_id: this.notebooks[0].id
-            });
-        } 
-
         console.log(this.state);
     }
 
-    componentWillUnmount(){
+    componentWillUnmount() {
         this.props.createNote(this.state).then(resNote => {
             this.props.history.replace(`${this.props.history.location.pathname + `/note/${resNote.note.id}`}`);
         });
@@ -72,43 +60,27 @@ class Editor extends React.Component {
 
     handleTitle(e) {
         this.setState({ note_title: e.target.value });
-        console.log(this.state); 
+        console.log(this.state);
     }
 
     handleChange(html) {
-        // this.setState({ body: this.quillRef.getContents() });
         this.setState({ note_body: this.quillRef.getText() });
         console.log(this.state);
     }
 
-    submitTitle(){
-        // console.log(this.state.title);
+    submitTitle() {
         console.log(`write a function to submit this later`);
     }
 
-    createNote(){
-
-        if (this.props.match.params.noteId){
-            console.log("no problem");
-
-            this.setState({
-                id: parseInt(this.props.match.params.noteId)
-            });
-
-            this.props.updateNote(this.state);
-        } else {
-            this.props.createNote(this.state).then(resNote => {
-                this.props.history.replace(`${this.props.history.location.pathname + `/note/${resNote.note.id}`}`);
-            }
-            );
-        }
+    createNote() {
+        this.props.updateNote(this.state);
     }
 
     render() {
         return (
             <div className="quill-scroll-container" >
                 <div className="c-main-nav">
-                    <input 
+                    <input
                         className="quill-title"
                         type="text"
                         placeholder={'Title'}
@@ -123,7 +95,7 @@ class Editor extends React.Component {
                     ref={(el) => { this.reactQuillRef = el }}
                     theme={'snow'}
                     onChange={this.handleChange}
-                    placeholder={this.props.placeholder} 
+                    placeholder={this.props.placeholder}
                     modules={this.modules}
                     formats={this.formats}
                 />

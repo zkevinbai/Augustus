@@ -19,6 +19,7 @@ import MNotebookNotesContainer from './notes/M_notebook_notes_container';
 
 // import Editor from './quill';
 import EditorContainer from './quill_container';
+import EditorEditContainer from './quill_edit_container';
 
 class Ink extends React.Component{
     constructor(props){
