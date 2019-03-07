@@ -9,7 +9,8 @@ class Editor extends React.Component {
             note_body: '',
             notebook_id: parseInt(this.props.match.params.id)
         };
-        
+        // this.state = this.props.note;
+
         this.quillRef = null;
         this.reactQuillRef = null;
         this.handleChange = this.handleChange.bind(this);
@@ -37,7 +38,8 @@ class Editor extends React.Component {
 
     componentDidMount() {
         this.attachQuillRefs();
-        this.props.noteShow()
+
+        this.props.fetchNotes().then( () => this.setState(this.props.note));
     }
 
     componentDidUpdate() {
@@ -50,7 +52,6 @@ class Editor extends React.Component {
                 notebook_id: this.notebooks[0].id
             });
         } 
-
         console.log(this.state);
     }
 
@@ -87,7 +88,6 @@ class Editor extends React.Component {
     }
 
     createNote(){
-
         if (this.props.match.params.noteId){
             console.log("no problem");
 
@@ -105,6 +105,7 @@ class Editor extends React.Component {
     }
 
     render() {
+        // debugger
         return (
             <div className="quill-scroll-container" >
                 <div className="c-main-nav">
@@ -112,7 +113,11 @@ class Editor extends React.Component {
                         className="quill-title"
                         type="text"
                         placeholder={'Title'}
-                        value={this.state.note_title}
+                        value={
+                            this.state?
+                                this.state.note_title :
+                                ""
+                        }
                         onChange={this.handleTitle}
                         onBlur={this.submitTitle}
                     />
