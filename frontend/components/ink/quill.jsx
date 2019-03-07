@@ -37,17 +37,17 @@ class Editor extends React.Component {
 
     componentDidMount() {
         this.attachQuillRefs();
-    }
-
-    componentDidUpdate() {
-        this.attachQuillRefs();
-        if (!this.notebooks){
+        if (!this.notebooks) {
             this.notebooks = Object.values(this.props.notebooks);
         } else if (this.notebooks.length === 1 && !this.state.notebook_id) {
             this.setState({
                 notebook_id: this.notebooks[0].id
             });
         }
+    }
+
+    componentDidUpdate() {
+        this.attachQuillRefs();
     }
 
     attachQuillRefs() {
@@ -79,12 +79,10 @@ class Editor extends React.Component {
 
     createNote(){
         this.props.createNote(this.state).then( resNote => {
-                debugger
-                this.props.history.push(`${this.props.history.location.pathname + `/note/${resNote.note.id}`}`);
+                this.props.history.replace(`${this.props.history.location.pathname + `/note/${resNote.note.id}`}`);
             }
         );
     }
-
 
     render() {
         return (
