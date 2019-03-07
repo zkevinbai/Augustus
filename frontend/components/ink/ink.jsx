@@ -229,8 +229,8 @@ class Ink extends React.Component{
         </div>
         <div className="content bar">
             <Switch>
-                <ProtectRoute path="/notebook/:id/note/:noteId" component={EditorContainer} />
-                <ProtectRoute path="/notebook/:id" component={EditorContainer} />
+                <ProtectRoute path="/notebook/:id/note/:noteId" exact component={EditorContainer} />
+                <ProtectRoute path="/notebook/:id"  exact component={EditorContainer} />
                 <ProtectRoute path="/" component={EditorContainer} />
             </Switch>
             <h1>Tags</h1>

@@ -57,6 +57,10 @@ class Editor extends React.Component {
     componentDidUpdate(prevProps) {
         this.attachQuillRefs();
 
+        if (prevProps.match.params.id !== this.props.match.params.id) {
+            console.log("this note was changed");
+        }
+
         if (prevProps.match.params.noteId !== this.props.match.params.noteId){
             this.props.fetchNotes().then(
                 () => {
@@ -84,6 +88,7 @@ class Editor extends React.Component {
     }
 
     componentWillUnmount(){
+        debugger
         this.createNote();
     }
 
@@ -148,6 +153,10 @@ class Editor extends React.Component {
                         onChange={this.handleTitle}
                         onBlur={this.submitTitle}
                     />
+
+                    <i className="fas fa-save"
+                        onClick={this.createNote}
+                    ></i>
                 </div>
                 <ReactQuill
                     ref={(el) => { this.reactQuillRef = el }}
