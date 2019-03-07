@@ -38,7 +38,6 @@
 .m-UserNotes-index{
     grid-row: 2/11;
     overflow: scroll;
-
     h2{
         font-size: 25px;
         margin-bottom: 5px;
@@ -47,6 +46,11 @@
 
     p{
         font-size: 20px;
+    }
+
+    .m-UserNotes-index-item{
+        display: grid;
+        grid-template-columns: 90% 10%;
     }
 
     a{
@@ -63,5 +67,12 @@
             background: rgba(123, 59, 224, 0.1);
             border-left: 5px solid rgb(123, 59, 224);
         }
+    }
+
+    i{
+        cursor: pointer;
+        background: transparent;
+        background: rgba(236, 236, 236, 1);
+        z-index: 1;
     }
 }

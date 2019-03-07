@@ -26,10 +26,17 @@ class MiddleUserNotes extends React.Component {
                 </div>
                 <div className="m-UserNotes-index">
                     {this.props.notes.map(note =>(
-                        <Link to={`/notebook/${note.notebook_id}/note/${note.id}`} key={note.id}>
-                            <h2>{note.note_title}</h2>
-                            <p>{note.note_body}</p>
-                        </Link>
+                        <div className="m-UserNotes-index-item" key={note.id} >
+                            <Link to={`/notebook/${note.notebook_id}/note/${note.id}`}>
+                                <h2>{note.note_title}</h2>
+                                <p>{note.note_body}</p>
+                            </Link>
+                            <i className="fas fa-trash noteDelete"
+                                onClick={() => {
+                                    this.props.deleteNote(note.id)
+                                }}
+                            ></i>
+                        </div>
                     ))}
                 </div>
             </div>

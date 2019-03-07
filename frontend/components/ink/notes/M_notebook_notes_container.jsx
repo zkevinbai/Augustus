@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import MUserNotes from './M_user_notes';
 import {
-    notesIndex
+    notesIndex, 
+    deleteNote
 } from '../../../actions/note_actions';
 import {
     notebookShow
@@ -33,7 +34,8 @@ const mapStateToProps = (storeState, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    fetchNotes: () => dispatch(notesIndex())
+    fetchNotes: () => dispatch(notesIndex()),
+    deleteNote: (noteId) => dispatch(deleteNote(noteId))
 });
 
 const MNotebookNotesContainer = connect(mapStateToProps, mapDispatchToProps)(MUserNotes);
