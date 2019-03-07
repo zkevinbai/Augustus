@@ -38,12 +38,16 @@ class Editor extends React.Component {
 
     componentDidMount() {
         this.attachQuillRefs();
-
-        this.props.fetchNotes().then( () => this.setState(this.props.note));
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(prevProps) {
         this.attachQuillRefs();
+
+        if (prevProps.match.params.noteId !== this.props.match.params.noteId){
+            this.props.fetchNotes().then(
+                () => this.setState(this.props.note)
+            );
+        }
 
         if (!this.notebooks) {
             this.notebooks = Object.values(this.props.notebooks);
