@@ -4,8 +4,8 @@ class Editor extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
-            title: '',
-            body: '',
+            note_title: '',
+            note_body: '',
             notebook_id: parseInt(this.props.match.params.id)
         };
         this.notebookId = parseInt(this.props.match.params.id);
@@ -15,6 +15,7 @@ class Editor extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleTitle = this.handleTitle.bind(this);
         this.submitTitle = this.submitTitle.bind(this);
+        this.createNote = this.createNote.bind(this);
 
         this.attachQuillRefs = this.attachQuillRefs.bind(this);
         this.modules = {
@@ -60,20 +61,30 @@ class Editor extends React.Component {
     }
 
     handleTitle(e) {
-        this.setState({ title: e.target.value });
+        this.setState({ note_title: e.target.value });
         console.log(this.state); 
     }
 
-    handleChange() {
-        this.setState({ body: this.quillRef.getContents() });
+    handleChange(html) {
+        // this.setState({ body: this.quillRef.getContents() });
+        this.setState({ note_body: this.quillRef.getText() });
         console.log(this.state);
-        debugger
+        // debugger
     }
 
     submitTitle(){
         // console.log(this.state.title);
         console.log(`write a function to submit this later`);
     }
+
+    createNote(){
+        this.props.createNote(this.state).then( resNote => {
+                debugger
+                this.props.history.push(`${this.props.history.location.pathname + `/note/${resNote.note.id}`}`);
+            }
+        );
+    }
+
 
     render() {
         return (
@@ -89,6 +100,7 @@ class Editor extends React.Component {
                     />
                 </div>
                 <ReactQuill
+                    onBlur={this.createNote}
                     ref={(el) => { this.reactQuillRef = el }}
                     theme={'snow'}
                     onChange={this.handleChange}
