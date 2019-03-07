@@ -42,6 +42,11 @@ class Ink extends React.Component{
 
         this.allNotes = this.allNotes.bind(this);
         this.allNotebookNotes = this.allNotebookNotes.bind(this);
+        this.handleNewNote = this.handleNewNote.bind(this);
+    }
+
+    componentDidMount(){
+        this.props.fetchNotebooks();
     }
 
     handleChange(value) {
@@ -112,6 +117,15 @@ class Ink extends React.Component{
         return <ProtectRoute path="/notebook/:id" component={MNotebookNotesContainer} /> 
     }
 
+    handleNewNote(){
+        if (this.props.match.params.id){
+            console.log(this.props.match.params.id);
+            this.props.history.replace(`/notebook/${ this.props.match.params.id}`)
+        } else {
+            alert("you must select a notebook to write new notes")
+        }
+    }
+
     render(){
     return (
     <div className="bars">
@@ -141,7 +155,7 @@ class Ink extends React.Component{
             </div>
 
             <div className="newNote" >
-                <a onClick={() => console.log("click")}> 
+                <a onClick={this.handleNewNote}> 
                     <i className="fas fa-feather-alt"></i>
                     <h1>Add New Note</h1>
                 </a>

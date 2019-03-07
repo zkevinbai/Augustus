@@ -1,4 +1,6 @@
 import ReactQuill from 'react-quill';
+import Delta from 'quill-delta';
+
 import React from 'react';
 class Editor extends React.Component {
     constructor(props) {
@@ -9,10 +11,10 @@ class Editor extends React.Component {
             note_body: '',
             notebook_id: parseInt(this.props.match.params.id)
         };
-        // this.state = this.props.note;
-
+        
         this.quillRef = null;
         this.reactQuillRef = null;
+
         this.handleChange = this.handleChange.bind(this);
         this.handleTitle = this.handleTitle.bind(this);
         this.submitTitle = this.submitTitle.bind(this);
@@ -38,6 +40,18 @@ class Editor extends React.Component {
 
     componentDidMount() {
         this.attachQuillRefs();
+
+        this.props.fetchNotes().then(
+            () => {
+                this.setState(
+                    {
+                        id: this.props.note.id,
+                        note_title: this.props.note.note_title,
+                        note_body: (this.props.note.note_body)
+                    }
+                );
+            }
+        );
     }
 
     componentDidUpdate(prevProps) {
@@ -45,7 +59,17 @@ class Editor extends React.Component {
 
         if (prevProps.match.params.noteId !== this.props.match.params.noteId){
             this.props.fetchNotes().then(
-                () => this.setState(this.props.note)
+                () => {
+                    this.setState(
+                        {
+                            id: this.props.note.id,
+                            note_title: this.props.note.note_title,
+                            note_body: (this.props.note.note_body)
+                        }
+                    );
+                    console.log("component was updated");
+                    console.log(this.state);
+                }
             );
         }
 
@@ -60,9 +84,7 @@ class Editor extends React.Component {
     }
 
     componentWillUnmount(){
-        this.props.createNote(this.state).then(resNote => {
-            this.props.history.replace(`${this.props.history.location.pathname + `/note/${resNote.note.id}`}`);
-        });
+        this.createNote();
     }
 
     attachQuillRefs() {
@@ -80,27 +102,28 @@ class Editor extends React.Component {
         console.log(this.state); 
     }
 
-    handleChange(html) {
-        // this.setState({ body: this.quillRef.getContents() });
-        this.setState({ note_body: this.quillRef.getText() });
-        console.log(this.state);
+    handleChange(content, delta, source, editor) {
+        this.setState({ note_body: content });
+
+        console.log("on change triggered");
     }
 
     submitTitle(){
-        // console.log(this.state.title);
         console.log(`write a function to submit this later`);
     }
 
     createNote(){
+
         if (this.props.match.params.noteId){
             console.log("no problem");
 
             this.setState({
                 id: parseInt(this.props.match.params.noteId)
             });
-
+            this.setState({ note_body: (this.state.note_body) });
             this.props.updateNote(this.state);
         } else {
+            this.setState({note_body: (this.state.note_body)});
             this.props.createNote(this.state).then(resNote => {
                 this.props.history.replace(`${this.props.history.location.pathname + `/note/${resNote.note.id}`}`);
             }
@@ -111,7 +134,7 @@ class Editor extends React.Component {
     render() {
         // debugger
         return (
-            <div className="quill-scroll-container" >
+            <div className="quill-scroll-container">
                 <div className="c-main-nav">
                     <input 
                         className="quill-title"
@@ -127,12 +150,14 @@ class Editor extends React.Component {
                     />
                 </div>
                 <ReactQuill
-                    onBlur={this.createNote}
-
                     ref={(el) => { this.reactQuillRef = el }}
                     theme={'snow'}
+
+                    value = {
+                        (this.state.note_body)
+                    }
                     onChange={this.handleChange}
-                    placeholder={this.props.placeholder} 
+
                     modules={this.modules}
                     formats={this.formats}
                 />
@@ -145,3 +170,14 @@ export default Editor;
 
 // onBlur = {(e) => this.setState({ title: e.target.value })}
 // on = {(e) => this.setState({ title: e.target.value })}
+// defaultValue = {
+//     this.state ?
+//     this.state.note_body :
+//     ""
+// // }
+
+// defaultValue = {
+//     this.props.note ?
+//     (this.props.note.note_body) :
+//     (this.state.note_body)
+// }

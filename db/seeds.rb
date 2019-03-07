@@ -11,7 +11,7 @@ ActiveRecord::Base.transaction do
     # reset all tables
     User.destroy_all
     Notebook.destroy_all
-    # Note.destroy_all
+    Note.destroy_all
 
     #create all info
     demo_user = User.create(

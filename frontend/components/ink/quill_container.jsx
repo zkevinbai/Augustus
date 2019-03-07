@@ -23,6 +23,7 @@ const mapStateToProps = (storeState, ownProps) => {
     // debugger
 
     note = storeState.entities.notes[ownProps.match.params.noteId];
+
     let notes = storeState.notes;
     return ({
         notebooks,

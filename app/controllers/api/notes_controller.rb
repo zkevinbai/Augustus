@@ -13,8 +13,9 @@ class Api::NotesController < ApplicationController
     end
 
     def create
+        
         @note = Note.new(note_params)
-
+        
         @note.note_title ="Untitled" unless @note.note_title
 
         if @note.save
