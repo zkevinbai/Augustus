@@ -5,7 +5,8 @@ class Editor extends React.Component {
         super(props);
         this.state = { 
             title: '',
-            body: ''
+            body: '',
+            notebook_id: parseInt(this.props.match.params.id)
         };
         this.notebookId = parseInt(this.props.match.params.id);
         
@@ -35,7 +36,6 @@ class Editor extends React.Component {
 
     componentDidMount() {
         this.attachQuillRefs();
-        debugger
     }
 
     componentDidUpdate() {
