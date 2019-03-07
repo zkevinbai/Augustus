@@ -7,6 +7,7 @@ class Editor extends React.Component {
             title: '',
             body: ''
         };
+        this.notebookId = parseInt(this.props.match.params.id);
         
         this.quillRef = null;
         this.reactQuillRef = null;
@@ -34,6 +35,7 @@ class Editor extends React.Component {
 
     componentDidMount() {
         this.attachQuillRefs();
+        debugger
     }
 
     componentDidUpdate() {
