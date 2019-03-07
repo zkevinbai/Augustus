@@ -31,7 +31,7 @@ class MiddleUserNotes extends React.Component {
                                 <h2>{note.note_title}</h2>
                                 <p>{note.note_body}</p>
                             </Link>
-                            <i className="fas fa-trash noteDelete"
+                            <i className="fas fa-skull-crossbones"
                                 onClick={() => {
                                     this.props.deleteNote(note.id)
                                 }}

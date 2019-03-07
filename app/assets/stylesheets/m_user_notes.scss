@@ -50,10 +50,13 @@
 
     .m-UserNotes-index-item{
         display: grid;
-        grid-template-columns: 90% 10%;
+        grid-template-columns: 85% 15%;
+        grid-template-rows: 1fr;
     }
 
     a{
+        grid-column: 1/3;
+        grid-row: 1;
         background: rgba(236, 236, 236, 1);
 
         border-radius: 5px;
@@ -70,9 +73,16 @@
     }
 
     i{
+        grid-column: 2;
+        grid-row: 1;
         cursor: pointer;
         background: transparent;
-        background: rgba(236, 236, 236, 1);
-        z-index: 1;
+
+        padding-top: 10px;
+        z-index: 2;
+        justify-self: start;
+        &:hover{
+            color: rgb(123, 59, 224);
+        }
     }
 }
