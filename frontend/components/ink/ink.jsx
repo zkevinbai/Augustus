@@ -121,7 +121,7 @@ class Ink extends React.Component{
             console.log(this.props.match.params.id);
             this.props.history.replace(`/notebook/${ this.props.match.params.id}`)
         } else {
-            alert("you must select a notebook to write new notes")
+            alert("please click a notebook to write a new note")
         }
     }
 
@@ -195,7 +195,7 @@ class Ink extends React.Component{
             </div>
 
             <div className="Tags leftbar-sub" >
-                <a onClick={() => console.log("click")}>
+                <a onClick={this.triggerPremium}> 
                     <i className="fas fa-bookmark"></i>
                     <h1>Tags</h1>
                 </a>
@@ -232,7 +232,7 @@ class Ink extends React.Component{
                 <ProtectRoute path="/notebook/:id"  exact component={EditorContainer} />
                 <ProtectRoute path="/" component={EditorContainer} />
             </Switch>
-            <h1>Tags</h1>
+            {/* <h1>Tags</h1> */}
         </div>
     </div>
     )

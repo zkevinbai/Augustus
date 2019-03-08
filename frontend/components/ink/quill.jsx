@@ -146,8 +146,7 @@ class Editor extends React.Component {
                         onChange={this.handleTitle}
                         onBlur={this.submitTitle}
                     />
-
-                    <i className="fas fa-feather-alt"
+                    <i class="fas fa-save"
                         onClick={this.createNote}
                     ></i>
                 </div>
