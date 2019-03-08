@@ -1,24 +1,26 @@
-# README
+Augustus <img src="https://github.com/zkevinbai/Augustus/blob/master/app/assets/images/Favicon.png" alt="Augustus Logo" align="center" height="50px" />
+======
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Augustus is a single page note taking web application built with elegance in mind.
+The app mimics the functionalities of Evernote, the design is my own.  
+I built this over the course of 10 days from February 26 to March 8 2019 to improve my web development skills.
 
-Things you may want to cover:
+Technologies
+---
+Augustus makes use of the Ruby on Rails React Redux stack with PostgreSQL.  
+And the React Quill Api to handle rich text editing.  
 
-* Ruby version
+Design
+---
+Augustus was designed with a simple theme.  Clear and bold, just like Augustus Caesar.
+The custom fonts and logos make it clear to the user what each component is responsible for.
+This allows the user to focus on their writing. 
 
-* System dependencies
+Features
+---
+* Encrypted user authentication for signup, login, and logout
+* Protected and Authorized routes for all parts of the app
+* Full Create Update Read and Destroy (CRUD) capabilities for Notes and Notebooks 
+* Rich text editing, photo upload, and video linking for notes
+* Modals to indicate to the user which features are to be built in the future
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
