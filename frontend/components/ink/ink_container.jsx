@@ -12,10 +12,13 @@ import Ink from './ink';
 // my preferred pattern is to include ownProps and use explicit return
 const mapStateToProps = (storeState, ownProps) => {
     const user = storeState.entities.users[storeState.session.id];
-    const firstNotebook = storeState.entities.notebooks[0];
+    let firstNotebookId;
+    if (Object.values(storeState.entities.notebooks).length !== 0){
+        firstNotebookId = Object.values(storeState.entities.notebooks)[0].id;
+    }
     return ({
         user,
-        firstNotebook
+        firstNotebookId
     });
 };
 

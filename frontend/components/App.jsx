@@ -31,7 +31,11 @@ const App = () => (
             </div>
 
             <div className="inkPage" >
-                <ProtectRoute path="/" component={InkContainer} />
+                <Switch>
+                    <ProtectRoute path="/notebook/:id/note/:noteId" exact component={InkContainer} />
+                    <ProtectRoute path="/notebook/:id" exact component={InkContainer} />
+                    <ProtectRoute path="/" component={InkContainer} />
+                </Switch>
             </div>
    </div>
 );

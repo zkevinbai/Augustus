@@ -45,7 +45,9 @@ class Ink extends React.Component{
     }
 
     componentDidMount(){
-        this.props.fetchNotebooks();
+        this.props.fetchNotebooks().then(() => (
+            this.setState({firstNotebookId: this.props.firstNotebookId})
+        ));
     }
 
     handleChange(value) {
@@ -121,7 +123,7 @@ class Ink extends React.Component{
             console.log(this.props.match.params.id);
             this.props.history.replace(`/notebook/${ this.props.match.params.id}`)
         } else {
-            alert("please click a notebook to write a new note")
+            this.props.history.replace(`/notebook/${this.state.firstNotebookId}`)  
         }
     }
 
