@@ -25,7 +25,7 @@ class MiddleUserNotes extends React.Component {
                     </div>
                 </div>
                 <div className="m-UserNotes-index">
-                    {this.props.notes.map(note =>(
+                    {this.props.notes.reverse().map(note =>(
                         <div className="m-UserNotes-index-item" key={note.id} >
                             <Link to={`/notebook/${note.notebook_id}/note/${note.id}`}>
                                 <h2>{note.note_title}</h2>
