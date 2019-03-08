@@ -11,10 +11,6 @@ class MiddleUserNotes extends React.Component {
         this.props.fetchNotes();
     }
 
-    parseBody(){
-
-    }
-
     render() {
         return (
             <div className="m-allnotes">
