@@ -6,6 +6,8 @@ Augustus <img src="https://github.com/zkevinbai/Augustus/blob/master/app/assets/
 The app mimics the functionalities of Evernote, the design is my own.  
 I built this over the course of 10 days from February 26 to March 8 2019 to improve my web development skills.
 
+[Wiki](https://github.com/zkevinbai/Augustus/wiki)
+
 Technologies
 ---
 Augustus makes use of the Ruby on Rails React Redux stack with PostgreSQL.  
