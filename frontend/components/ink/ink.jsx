@@ -19,14 +19,13 @@ import MNotebookNotesContainer from './notes/M_notebook_notes_container';
 
 // import Editor from './quill';
 import EditorContainer from './quill_container';
-import EditorEditContainer from './quill_edit_container';
 
 class Ink extends React.Component{
     constructor(props){
         super(props);
         this.state = {
             logout: true,
-            notebooks: true
+            notebooks: false
         };
         this.hide = this.hide.bind(this);
         this.hidden = this.hidden.bind(this);
