@@ -1,5 +1,4 @@
 import ReactQuill from 'react-quill';
-import Delta from 'quill-delta';
 
 import React from 'react';
 class Editor extends React.Component {
@@ -56,8 +55,18 @@ class Editor extends React.Component {
     componentDidUpdate(prevProps) {
         this.attachQuillRefs();
 
+        if (!this.props.match.params.noteId) {
+            console.log("this could have been better");
+
+            // this.setState(this.props.note);
+            // this.setState({
+            //     note_title: "",
+            //     note_body: ""
+            // });
+        }
+
         if (prevProps.match.params.id !== this.props.match.params.id) {
-            console.log("this note was changed");
+            console.log("the notebook was changed");
             this.setState({
                 notebook_id: parseInt(this.props.match.params.id)
             });
@@ -82,7 +91,6 @@ class Editor extends React.Component {
     }
 
     componentWillUnmount(){
-        debugger
         this.createNote();
     }
 
@@ -139,7 +147,7 @@ class Editor extends React.Component {
                         onBlur={this.submitTitle}
                     />
 
-                    <i class="fas fa-feather-alt"
+                    <i className="fas fa-feather-alt"
                         onClick={this.createNote}
                     ></i>
                 </div>
