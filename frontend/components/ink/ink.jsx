@@ -25,7 +25,7 @@ class Ink extends React.Component{
         super(props);
         this.state = {
             logout: true,
-            notebooks: false
+            notebooks: true
         };
         this.hide = this.hide.bind(this);
         this.hidden = this.hidden.bind(this);
