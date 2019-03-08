@@ -55,16 +55,6 @@ class Editor extends React.Component {
     componentDidUpdate(prevProps) {
         this.attachQuillRefs();
 
-        if (!this.props.match.params.noteId) {
-            console.log("this could have been better");
-
-            // this.setState(this.props.note);
-            // this.setState({
-            //     note_title: "",
-            //     note_body: ""
-            // });
-        }
-
         if (prevProps.match.params.id !== this.props.match.params.id) {
             console.log("the notebook was changed");
             this.setState({
@@ -146,7 +136,7 @@ class Editor extends React.Component {
                         onChange={this.handleTitle}
                         onBlur={this.submitTitle}
                     />
-                    <i class="fas fa-save"
+                    <i className="fas fa-save"
                         onClick={this.createNote}
                     ></i>
                 </div>

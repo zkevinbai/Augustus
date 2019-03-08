@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 class MiddleUserNotes extends React.Component {
     constructor(props) {
         super(props);
-        this.parseBody = this.parseBody.bind(this);
     }
 
     componentDidMount() {
