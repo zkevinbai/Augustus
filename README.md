@@ -24,21 +24,20 @@ Features
 * Rich text editing, photo upload, and video linking for notes
 * Modals to indicate to the user which features are to be built in the future
 
-
 Feature GIFs
 ---
-# Login Logout
+## Login Logout
 <img src="https://github.com/zkevinbai/Augustus/blob/master/public/gifs/DemoLogin.gif" align="center"/>
 
-# Note Editing
+##Note Editing
 <img src="https://github.com/zkevinbai/Augustus/blob/master/public/gifs/NoteEditing.gif" align="center"/>
 
-# Adding Photos
+## Adding Photos
 <img src="https://github.com/zkevinbai/Augustus/blob/master/public/gifs/AddPhotos.gif" align="center"/>
 
-# Notebooks
+## Notebooks
 <img src="https://github.com/zkevinbai/Augustus/blob/master/public/gifs/Notebooks.gif" align="center"/>
 
-# Sidebar
+## Sidebar
 <img src="https://github.com/zkevinbai/Augustus/blob/master/public/gifs/SideBar.gif" align="center"/>
 
