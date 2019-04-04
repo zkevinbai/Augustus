@@ -65,4 +65,11 @@ ActiveRecord::Base.transaction do
         "<h1>Upload any photo you'd like </h1><h1><span style=\"background-color: rgb(255, 255, 204); color: rgb(0, 102, 204);\" class=\"ql-font-monospace\">Go Bears!</span></h1><p><br></p><p><img src=\"https://pbs.twimg.com/media/Drut_DbVYAMzUqS.jpg\"></p>", 
         notebook_id: demo_personal.id
     )
+
+    links_note = note.create(
+        note_title: "Links & Videos",
+        note_body:
+        "<p><strong>Links:</strong></p><p>\t\t\t<a href=\"https://github.com/zkevinbai\" target=\"_blank\">My Github</a></p><p>\t\t\t<a href=\"https://linkedin.com/in/kevinbai/\" target=\"_blank\">My Linkedin</a></p><p><br></p><p><strong>Videos</strong>:</p><p>\t\t\t<a href=\"https://www.youtube.com/watch?v=NrI-UBIB8Jk\" target=\"_blank\">Hooked on a Feeling</a></p><p>\t\t\t<a href=\"https://www.youtube.com/watch?v=c-4flnuxNV4&amp;list=PLCu6M33km99I8U1kattk29VIW9tlT4Qqx&amp;index=2&amp;t=1s\" target=\"_blank\">Why we make bad decisions</a></p>"
+        notebook_id: demo_personal.id
+    )
 end
