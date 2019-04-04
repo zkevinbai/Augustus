@@ -45,10 +45,24 @@ ActiveRecord::Base.transaction do
         notebook_title: "Travel"
     )
 
-    demo_note = Note.create(
+    instructions_note = Note.create(
         note_title: "How to",
         note_body:
         "<h1>New Note</h1><ol><li>click add new note button</li><li>click any notebook</li><li>write as you'd like then click the disc to save it to the database</li></ol><h1>Edit Note</h1><ol><li>click a note from the side bar</li><li>edit as you'd like and then click the disc to save it to the database</li></ol><h1>Delete Note</h1><ol><li>delete notes by clicking the skull and crossbones to the upper right hand corner of the note</li></ol><h1>Notebook</h1><ol><li>click notebook chevron for notebook dropdown</li><li>click notebooks button to access notebook interface</li><li>add, edit, or delete a notebook at the edit notebook interface</li></ol><h1>Augustus Editor</h1><ol><li>Supports photos and links to videos</li><li>Supports rich text editing</li></ol><p><br></p>",
+        notebook_id: demo_personal.id
+    )
+
+    languages_note = Note.create(
+        note_title: "Write in Any Language",
+        note_body: 
+        "<h1><span style=\"background-color: rgb(250, 204, 204);\">Chinese: 中文</span></h1><p><br></p><h1><span style=\"background-color: rgb(255, 255, 204);\">Spanish：Español</span></h1><p><br></p><h1><span style=\"background-color: rgb(204, 232, 204);\">Arabic: العربية</span></h1><p><br></p><p>Rich text editing is supported for any language of your choice. </p>",
+        notebook_id: demo_personal.id
+    )
+
+    photos_note = Note.create(
+        note_title: "Upload Photos",
+        note_body:
+        "<h1>Upload any photo you'd like </h1><h1><span style=\"background-color: rgb(255, 255, 204); color: rgb(0, 102, 204);\" class=\"ql-font-monospace\">Go Bears!</span></h1><p><br></p><p><img src=\"https://pbs.twimg.com/media/Drut_DbVYAMzUqS.jpg\"></p>", 
         notebook_id: demo_personal.id
     )
 end
