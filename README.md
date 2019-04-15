@@ -48,6 +48,55 @@ Code Snippets
 ---
 ## Custom Routing
 I made a design decision to base both my splash page and my app at the root URL '/'.  To enable that, my route util needed to be able to detect if the current URL is related to the app or not. 
+
+```js
+// frontend/util/route_util.jsx
+import React from 'react';
+import { Route, Redirect, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+const mapStateToProps = (storeState, ownProps) => {
+    return { 
+        loggedIn: Boolean(storeState.session.id),
+        location: ownProps.history.location.pathname 
+    };
+};
+
+const authorized = ["/notebooks", "/notebook", "/premium"];
+
+const Auth = 
+( { component: Component, path, loggedIn, location, exact} ) => {
+    if (authorized.some( element => location.includes(element) ) ){
+        return <Redirect to={location} />
+    } else {
+        return <Route path={ path } exact={ exact } render={ (props) => (
+                !loggedIn ? (
+                    <Component {...props} />
+                ) : (
+                    <Redirect to="/" />
+                )
+            )}
+        />
+    }
+};
+
+export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
+
+const Protect = 
+( { component: Component, path, loggedIn, exact} ) => (
+    <Route path={ path } exact={ exact } render={ (props) => (
+            loggedIn ? (
+                <Component {...props} />
+            ) : (
+                <Redirect to="/" />
+            )
+        )}
+    />
+);
+
+export const ProtectRoute = withRouter(connect(mapStateToProps, null)(Protect));
+```
+
 <img src="https://github.com/zkevinbai/Augustus/blob/master/public/code/RouteUtil.png" align="center"/>
 
 ## Create Or Edit
