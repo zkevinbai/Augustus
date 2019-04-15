@@ -97,10 +97,29 @@ const Protect =
 export const ProtectRoute = withRouter(connect(mapStateToProps, null)(Protect));
 ```
 
-<img src="https://github.com/zkevinbai/Augustus/blob/master/public/code/RouteUtil.png" align="center"/>
-
 ## Create Or Edit
 If the URL is based at the root of a notebook `notebook/:id`, then the create action of a note should send a post request to the backend and then redirect the user to the show/edit of that note at `notebook/:id/note/:noteId`.  
 If the URL is note based at a notebook, the create action of a note should send a patch request to the backend.
-<img src="https://github.com/zkevinbai/Augustus/blob/master/public/code/CreateOrEdit.png" align="center"/>
+
+```js
+// frontend/components/ink/quill.jsx
+    createNote(){
+        if (this.props.match.params.noteId){
+            console.log("edit note");
+            this.setState({
+                id: parseInt(this.props.match.params.noteId)
+            });
+            this.setState({ note_body: (this.state.note_body) });
+            this.props.updateNote(this.state);
+        } else {
+            console.log("create note");
+            this.setState({note_body: (this.state.note_body)});
+            this.props.createNote(this.state).then(resNote => {
+                this.props.history.replace(`${this.props.history.location.pathname + `/note/${resNote.note.id}`}`);
+            });
+        }
+    }
+
+```
+
 
