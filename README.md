@@ -2,7 +2,7 @@ Augustus <img src="https://github.com/zkevinbai/Augustus/blob/master/app/assets/
 ======
 
 
-[Augustus](http://www.augustus.ink/#/) is a single page note taking web application built with elegance in mind.
+[Augustus](http://www.augustus-ink.herokuapp.com) is a single page note taking web application built with elegance in mind.
 The app mimics the functionalities of Evernote, the design is my own.  
 I built this over the course of 10 days from February 26 to March 8 2019 to improve my web development skills.
 
