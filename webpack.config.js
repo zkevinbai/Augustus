@@ -13,11 +13,17 @@ module.exports = {
     module: {
         rules: [
             {
+                // react-quill-new ships ESM that imports 'react/jsx-runtime'
+                // without an extension; React 16 has no "exports" map for it.
+                test: /\.m?js$/,
+                resolve: { fullySpecified: false }
+            },
+            {
                 test: /\.jsx?$/,
                 exclude: /(node_modules)/,
                 use: {
                     loader: 'babel-loader',
-                    query: {
+                    options: {
                         presets: ['@babel/env', '@babel/react']
                     }
                 },

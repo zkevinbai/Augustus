@@ -12,7 +12,8 @@
 
 class Note < ApplicationRecord
     # validates :note_title, :note_body, :notebook_id, null: false
-    validates :note_body, :notebook_id, null: false
+    # `null: false` is not a validator; Rails 5.2 silently ignored it and
+    # Rails 8 raises. Notebook presence is enforced by `belongs_to` below.
 
     belongs_to :notebook
     has_one :user,

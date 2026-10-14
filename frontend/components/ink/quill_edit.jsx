@@ -1,4 +1,4 @@
-import ReactQuill from 'react-quill';
+import ReactQuill from 'react-quill-new';
 import React from 'react';
 class Editor extends React.Component {
     constructor(props) {
@@ -26,7 +26,7 @@ class Editor extends React.Component {
             'header', 'font', 'size',
             'bold', 'italic', 'underline', 'strike',
             'blockquote', 'code-block',
-            'list', 'bullet', 'indent',
+            'list', 'indent',
             'link', 'image', 'color', 'background', 'align'
         ];
     }
@@ -94,6 +94,7 @@ class Editor extends React.Component {
 
                     ref={(el) => { this.reactQuillRef = el }}
                     theme={'snow'}
+                    useSemanticHTML={false}
                     onChange={this.handleChange}
                     placeholder={this.props.placeholder}
                     modules={this.modules}
